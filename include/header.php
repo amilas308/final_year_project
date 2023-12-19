@@ -7,7 +7,7 @@
         $user = $result->fetch_assoc();
         $name = $user['first_name'];
     }else{
-        header("Location: ./pages/login.php");
+        // header("Location: ./pages/login.php");
     }
 
 

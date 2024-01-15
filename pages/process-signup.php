@@ -4,31 +4,32 @@ require_once "../connect.php";
     $lname = htmlspecialchars($_POST['lname']);
     $email = htmlspecialchars($_POST['email']);
     $phone = htmlspecialchars($_POST['phone']);
-    $password =  htmlspecialchars($_POST['password']);
     $address =  htmlspecialchars($_POST['address']);
+    $password =  htmlspecialchars($_POST['password']);
     $cpassword =  htmlspecialchars($_POST['cpassword']);
-    $error_message = 'You must fill in all feilds';
+    $fname_err = $lname_err = $email_err = $phone_err = $address_err = $password_err = $cpassword_err = '';
     if(empty($fname)){
-        die('first name is required');
+        $fname_err = 'Enter your first name';
     }
     if(empty($lname)){
-        die('last name is required');
+        $lname_err = 'Enter your last name';
     }
     if(empty($email)){
-        die('email is required');
+        $email_err = 'Enter your email';
     }
     if(empty($address)){
-        die('address is required');
+        $address_err = 'Enter your address ';
     }
     if(empty($password)){
-        die('password is required');
+        $password_err = 'Enter a password';
     }
     if(empty($cpassword)){
-        die('confirm your password ');
+        $cpassword_err = 'Enter confirm password';
     }
     if($password !== $cpassword){
-        die('Password does not match');
+        $pass_not_match = 'password does not match';
     }
+    if(!$fname_err && !$lname_err && !$email_err && !$phone_err && !$password_err && !$cpassword_err && !$pass_not_match){
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
     $sql = "INSERT INTO `customer_users`(`first_name`, `last_name`, `email`, `phone`, `address`, `password`) VALUES (?,?,?,?,?,?)";
 
@@ -44,10 +45,10 @@ require_once "../connect.php";
     );
     $stmt->execute();
     // if(mysqli_query($conn, $sql)){
-        echo "Successful sign in";
-        sleep(2);
+        // echo "Successful sign in";
+        // sleep(2);
         header("Location: login.php");
         // var_dump($_POST);
     // }
-
+    }
 ?>

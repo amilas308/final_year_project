@@ -58,11 +58,15 @@ require_once "../connect.php";
                       $address,
                       $password_hash
     );
-    $stmt->execute();
+    if($stmt->execute()){
+        echo 'I am working';
+        header("Location: login.php");
+    }
     // if(mysqli_query($conn, $sql)){
         // echo "Successful sign in";
         // sleep(2);
-        header("Location: login.php");
+        echo 'I am working';
+
         // var_dump($_POST);
     // }
     }
@@ -79,7 +83,7 @@ require_once "../connect.php";
     </head>
     <body>
         <div class="signin" style="height: 620px;">
-            <h1>Sing In</h1>
+            <h1>Sign In</h1>
             <form action="" method="POST">
                 <!-- <label for="First-name">First Name</label> -->
                 <input name="fname" class="<?php echo $fname_err ? 'is_invalid' : null; ?>" type="text"  autocomplete="off"  placeholder="First Name">
@@ -107,18 +111,18 @@ require_once "../connect.php";
                     <?php echo $address_err; ?>
                 </span>
                 <!-- <label for="password">Password</label> -->
-                <input type="password"  name="password" class="<?php echo $password_err ? 'is_invalid' : null; ?>"placeholder="**********">
+                <input type="password"  name="password" class="<?php echo $password_err ? 'is_invalid' : null; ?>"placeholder="password">
                 <span class="invalid-message">
                     <?php echo $password_err; ?>
                 </span>
                 <!-- <label for="cpassword">Confirm Password</label> -->
-                <input type="password"  name="cpassword"class="<?php echo $cpassword_err ? 'is_invalid' : null; ?>" placeholder="**********">
+                <input type="password"  name="cpassword"class="<?php echo $cpassword_err ? 'is_invalid' : null; ?>" placeholder="password">
                 <span class="invalid-message">
                     <?php echo $cpassword_err; ?>
                 </span>
                 <input type="submit" name="submit" value="Sign in">
             </form>
-            <p>Already have an account?<a href="#">Log in</a></p>
+            <p>Already have an account?<a href="login.php">Log in</a></p>
         </div>
     </body>
 </html>

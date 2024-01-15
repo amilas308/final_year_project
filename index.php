@@ -1,18 +1,22 @@
 <?php include 'include/header.php'; ?>
         <section class="hero">
             <div class="jnrhero">
+                <?php if(isset($_SESSION['user_id'])): ?>
                 <h4>Trade-in-offer for <?php echo $name ?></h4>
+                <?php else: ?>
+                <h4>Welcome to Syntax</h4>
+                    <?php endif; ?>
                 <h2>Super Value deals</h2>
                 <h1>On all products</h1>
                 <p>Save moore with coupons & up to 70% off!</p>
                 <button>Shop Know</button>
             </div>
             <div class="dissapear">
-                <img src="./img/pngegg.png" height="360" alt="">
+                <img src="" id="image" height="360" alt="">
             </div>
         </section>
     </div>
-    <!-- <section class="feature section-p1">
+    <!-- <section class="feature section-p1"./img/pngegg.png>
         <div class="fe-box">
             <img src="./img/PngItem_1701988.png" height="70" alt="fe-box">
             <h6>Free Shipping</h6>

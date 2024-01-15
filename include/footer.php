@@ -16,8 +16,8 @@
             </div>
             <div class="about">
                 <h4>About Us</h4>
-                <p><a href="../about.php" target="_blank">Delivery Information</a></p>
-                <p><a href="../about.php" target="_blank">Privacy policy</a></p>
+                <p><a href="/porject/about.php" target="_blank">Delivery Information</a></p>
+                <p><a href="/porject/about.php" target="_blank">Privacy policy</a></p>
                 <!-- <p><a href="#" target="_blank">Terms and Conditions</a></p> -->
             </div>
             <div class="account">

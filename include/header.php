@@ -37,7 +37,7 @@
                     </a>
                     <div>
                         <ul class="navbar" id="chntxt">
-                            <li><a class="active1" href="index.html">Home</a></li>
+                            <li><a class="active1" href="index.php">Home</a></li>
                             <!-- <li><a href="shop.html">Shop</a></li> -->
                             <li><a href="./about.php">About</a></li>
                             <li><a href="./pages/product.php">Product</a></li>
@@ -45,11 +45,11 @@
                                 <div class="dropdown">
                                     <button id="drop" class="dropbtn">Account</button>
                                     <div class="dropdown-content">
-                                        <span><?php echo "Welcome back, " . $user['first_name'] . $user['last_name']?></span>
+                                        <span><?php echo "Welcome back, " . $user['first_name'] .' '. $user['last_name']?></span>
                                         <span><?php echo $user['email'] ?></span>
                                         <span><?php echo $user['phone'] ?></span>
-                                        <a href="#" class="ed">Edit</a>
-                                        <a href="#" class="sin">Sign out</a>
+                                        <a href="/porject/pages/edit_user.php" class="ed">Edit</a>
+                                        <a href="/porject/pages/logout.php" class="sin">Log out</a>
                                     </div>
                                 </div>
                                 <!-- <select>
@@ -59,7 +59,7 @@
                                     <a href="#">edit</a>
                                 </select> -->
                             <?php else: ?>
-                            <li><a href="contact.html">Signin</a></li>
+                            <li><a href="./pages/signup.php">Signup</a></li>
                             <?php endif; ?>
                             <li><a href="cart.html"><i title="Cart" class="fas fa-shopping-cart"></i></a></li>
                         </ul>

@@ -14,6 +14,7 @@
     transition: background-color 1s ease-out;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
 }
+
 .pro img{
     height: 200px;
 }
@@ -64,7 +65,7 @@ body{
     padding-top: -10em;
 }
 body .header-nav{
-    background: url(./img/wall.jpg) !important;
+    background: url(./img/lolgo5.jpg) !important;
     justify-content: center;
     align-items: center;
     width: 100%;
@@ -558,23 +559,24 @@ body .header-nav{
     /* flex-direction: row; */
 }
 footer{
-    background-color: #cdebbc;
+    background-color: #088178;
 
 }
 footer h4{
     font-size: 19px;
-    color: #000;
+    color: #fff;
 }
 footer a{
     text-decoration: none;
     cursor: pointer;
-    color: #000;
+    color: #fff;
 }
 footer .cont{
     width: 20%;
 }
 footer h3{
     /* margin-top: 100px; */
+    color: #fff;
     margin-bottom: -40px;
     align-items: center;
     text-align: center;
@@ -582,7 +584,7 @@ footer h3{
 /* Sign in segment */
 div.signin{
     width: 440px;
-    height: 560px;
+    height: 590px;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -604,17 +606,29 @@ div.signin form{
 div.signin form label{
     font-size: 17px;
     font-weight: 400;
-    padding: 3px 4px;
+    /* padding: 3px 4px; */
     color: #000;
     display: none;
 }
 div.signin form input{
-    margin: 14px 0;
+    margin: 18px 0;
     padding: 8px 0 8px 3px;
     border: 1px solid #088178;
     border-top-left-radius: 6px;
     border-bottom-left-radius: 6px;
     outline: none;
+}
+div.signin form input.is_invalid{
+    border: 1px solid #f00;
+    /* color: #f00; */
+    /* outline: #f00; */
+}
+div.signin form span.invalid-message{
+    color: #f00;
+    margin-top: -13px;
+    margin-bottom: -13px;
+    padding: 0 0 0 3px;
+    font-size: 12px;
 }
 div.signin form input[type='submit']{
     margin: 14px 0 0 0;
@@ -855,6 +869,11 @@ div.about-navbar1 div.about-heading{
     }
     .dissapear{
         display: none;
+    }
+    .hero .dissapear img{
+        /* border-radius: 30px; */
+        width: 360px !important;
+        height: 280px !important;
     }
     .feature .dissapear{
         display: none;

@@ -21,6 +21,13 @@ function appear(){
         abouthead.classList.remove('pa-fixed-header');
     }
 }
+let image = document.getElementById('image');
+let images = ['new4.png','new3.png','new2.png'];
+setInterval(function(){
+    let random = Math.floor(Math.random() * 3);
+    image.src = images[random];
+    console.log(images);
+},1500);
 function changeBg(){
     var scrollValue = window.scrollY;
     console.log(scrollValue);

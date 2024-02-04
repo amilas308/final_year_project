@@ -145,7 +145,7 @@ body .header-nav{
     background: #088178;
     position: absolute;
     bottom: -5px;
-    left: 10px;
+    left: 19px;
 }
 /* .about-navbar li a:hover::after, */
 .navbar li a.active1::after,
@@ -207,7 +207,14 @@ body .header-nav{
     padding: 4px 4px;
     display: block;
 }
+.dropdown-content button{
+    width: 100%;
+    outline: none;
+    border: none;
+    background-color: transparent;
+}
 .dropdown-content a.ed{
+    text-align: left;
     display: block;
     text-decoration: none;
     padding: 4px;
@@ -323,10 +330,13 @@ body .header-nav{
     text-align: center;
 }
 .product1 .pro-container{
-    display: flex;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
     align-items: center;
-    justify-content: space-between;
-    flex-wrap: wrap;
+    /* grid-auto-rows: 80px; */
+    grid-gap: 9px;
+    /* justify-content: space-between; */
+    /* flex-wrap: wrap; */
 }
 .product1 .pro{
     width: 10%;
@@ -809,7 +819,7 @@ div.about-navbar1 div.about-heading{
 .about-heading ul li{
     list-style: none;
     /* color: #000; */
-    padding: 4px 8px;
+    padding: 4px 19px;
 }
 .about-heading ul li a{
     color: #000;
@@ -821,6 +831,125 @@ div.about-navbar1 div.about-heading{
 .about-heading .marsh{
     display: none;
 }
+/* edit user */
+.edit_user{
+    position: absolute;
+    top: 50%;
+    opacity: 1;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.25);
+    background: #fff;
+    line-height: 1.5rem;
+    padding: 7px 8px;
+    border-radius: 9px;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+}
+/* .edit_user.active2{
+    margin-top: 90px;
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.25);
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+} */
+.edit_user  h2{
+    padding-top: 15px;
+    text-align: center;
+    color: #000 !important;
+    /* margin-top: 15px; */
+}
+.edit_user  em{
+    /* margin-top: 15px; */
+    position: absolute;
+    cursor: pointer;
+    top: 10px;
+    right: 10px;
+    width: 20px;
+    background-color: #f00;
+    border-radius: 20px;
+    padding: 0 4px;
+    font-size: 16px;
+    line-height: 1.2rem;
+    color: #fff;
+}
+.edit_user form{
+    margin-top: 40px;
+    width: 850px;
+    height: 330px;
+    padding: 17px;
+    display: grid;
+    /* grid-template-columns: 50% 50%; */
+    grid-template-columns: repeat(2, 3fr);
+    grid-auto-rows: 80px;
+    grid-gap: 8px;
+    /* flex-direction: row; */
+}
+.edit_user form .form-element{
+    height: 80px;
+    /* margin-top: -50px; */
+    margin-bottom: -50%;
+    /* padding: -50px 0; */
+    display: grid !important;
+}
+.edit_user form .add{
+    grid-column-start: 1;
+    grid-column-end: 3;
+}
+.edit_user form .form-element label{
+    font-size: 16px;
+    font-weight: 300;
+    color: #000 !important;
+}
+.edit_user form .form-element input[type="text"],
+.edit_user form .form-element input[type="email"],
+.edit_user form .form-element input[type="tel"]{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    color: #000 !important;
+    background-color: #c9c4c4;
+    /* display: block; */
+}
+.edit_user form input[type="submit"]{
+    display: grid;
+    height: 50px;
+    /* grid-template-columns: repeat(1, 2fr); */
+    grid-auto-rows: 5px !important;
+    padding: 5px;
+    border-radius: 7px;
+    color: #fff;
+    background-color: #088178;
+    width: 100%;
+    cursor: pointer;
+    outline: none;
+    border: none;
+    font-weight: 800;
+    transition: 100ms ease-in-out,
+                opacity 100ms ease-in 0ms;
+}
+.edit_user  input[type="submit"]:hover{
+    /* box-shadow: 5px 5px 5px 5px rgba(0, 0, 0, 0.15); */
+    box-shadow: 8px 8px 14px #7d7a7a;
+    opacity: .7;
+
+}
+.edit_user a{
+    /* text-align: center; */
+    position: relative;
+    /* display: block; */
+    /* right: 10px; */
+    left: 80%;
+    top: 5px;
+    text-decoration: none;
+    color: #000;
+}
+/* edit user */
 /* About page styling end */
 @media (max-width: 1086px){
     .hero{

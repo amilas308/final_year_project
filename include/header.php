@@ -48,7 +48,9 @@
                                         <span><?php echo "Welcome back, " . $user['first_name'] .' '. $user['last_name']?></span>
                                         <span><?php echo $user['email'] ?></span>
                                         <span><?php echo $user['phone'] ?></span>
-                                        <a href="/porject/pages/edit_user.php" class="ed">Edit</a>
+                                        <button id="ed">
+                                            <a href="/porject/pages/edit_user.php?editid=<?php echo $user['user_id'] ?>" class="ed">Edit</a>
+                                        </button>
                                         <a href="/porject/pages/logout.php" class="sin">Log out</a>
                                     </div>
                                 </div>
@@ -60,6 +62,7 @@
                                 </select> -->
                             <?php else: ?>
                             <li><a href="./pages/signup.php">Signup</a></li>
+                            <li><a href="./pages/login.php">Log in</a></li>
                             <?php endif; ?>
                             <li><a href="cart.html"><i title="Cart" class="fas fa-shopping-cart"></i></a></li>
                         </ul>
@@ -68,3 +71,5 @@
                 </div>
             </div>
         </section>
+
+

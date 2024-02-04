@@ -54,7 +54,7 @@
                 <input type="password"  name="password" placeholder="**********">
                 <input type="submit" name="submit" value="Log in">
             </form>
-            <p>I don't have an account?<a href="#">Sign in</a></p>
+            <p>I don't have an account?<a href="signup.php">Sign in</a></p>
         </div>
     </body>
 </html>

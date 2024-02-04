@@ -48,8 +48,10 @@
                                         <span><?php echo "Welcome back, " . $user['first_name'] . $user['last_name']?></span>
                                         <span><?php echo $user['email'] ?></span>
                                         <span><?php echo $user['phone'] ?></span>
-                                        <a href="#" class="ed">Edit</a>
-                                        <a href="#" class="sin">Sign out</a>
+                                        <button id="ed">
+                                            <a href="/porject/pages/edit_user.php?editid=<?php echo $user['user_id'] ?>" class="ed">Edit</a>
+                                        </button>
+                                        <a href="/porject/pages/logout.php" class="sin">Log out</a>
                                     </div>
                                 </div>
                                 <!-- <select>

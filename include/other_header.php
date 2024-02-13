@@ -24,26 +24,26 @@
     <link rel="icon" type="png" href="/img/logo.jpg?v=<?php echo time(); ?>">
     <link rel="stylesheet" type="text/css" href="./style.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-    <link rel="stylesheet" href="./scrollnav.css">
+    <link rel="stylesheet" type="text/css" href="./scrollnav.css?v=<?php echo time(); ?>">
     <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css">
 </head>
 <body>  
-    <div class="header-nav"> 
-        <section id="header">
-            <div class="navbar1">
-                <div class="navBar heading" id="navBar">
+    <div class="about-header-nav"> 
+        <section id="about-header">
+            <div class="about-navbar1">
+                <div class="about-navBar about-heading" id="about-navBar">
                     <a href="index.html">
                         <img src="./img/logo.jpg" height="47" alt="#" class="logo">
                     </a>
                     <div>
-                        <ul class="navbar" id="chntxt">
-                            <li><a class="active1" href="index.php">Home</a></li>
+                        <ul class="about-navbar" id="chntxt">
+                            <li><a href="index.php">Home</a></li>
                             <!-- <li><a href="shop.html">Shop</a></li> -->
-                            <li><a href="./about.php">About</a></li>
+                            <li><a class="active1" href="./about.php">About</a></li>
                             <li><a href="./pages/product.php" class="product-btn">Product</a></li>
                             <?php if(isset($user)): ?>
                                 <div class="dropdown">
-                                    <button id="drop" class="dropbtn">Account</button>
+                                    <button id="drop" class="about-dropbtn">Account</button>
                                     <div class="dropdown-pad">
                                         <div class="dropdown-content">
                                             <h2>Account</h2>
@@ -76,5 +76,4 @@
                 </div>
             </div>
         </section>
-
-
+    </div>

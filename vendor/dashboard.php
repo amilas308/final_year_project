@@ -5,11 +5,13 @@
         // echo "Name is set";
     } else{
         // echo "NO name is set";
+        header("Location: ./vendor_pages/login.php");
     }
     if(isset($_SESSION['role'])){
         // echo 'role is set';
     } else{
         // echo "e no set oo";
+        header("Location: ./vendor_pages/login.php");
     }
     // $name = $_SESSION['username'];
     // echo $name;
@@ -41,7 +43,7 @@
         </nav>
         <div class="container-under">
             <aside>
-                <a href="dashboard.php?dash_menu" id="" class="btn">
+                <a href="dashboard.php?dash_menu" id="" class="btn <?php echo isset($_GET['dash_menu']) ? ' active': ''; ?>">
                     <i class="fas fa-dashboard move"></i>
                     <span>Dashboard</span>
                 </a>
@@ -54,7 +56,7 @@
                     <span>Product</span>
                 </a>
                 <?php if($_SESSION['username'] == 'admin'): ?>
-                <a href="dashboard.php?vendor_user">
+                <a href="dashboard.php?vendor_user" class="btn">
                     <i class="fas fa-shop move"></i>
                     <span>Vendor</span>
                 </a>
@@ -62,7 +64,7 @@
                     <i class="fas fa-shop move"></i>
                     <span>Categories</span>
                 </a>
-                <a href="dashboard.php?vendor_user" class="btn">
+                <a href="dashboard.php?vendor_user" class="btn <?php echo isset($_GET['vendor_user']) ? ' active': ''; ?>">
                     <i class="fas fa-shop move"></i>
                     <span>Test</span>
                 </a>
@@ -79,6 +81,9 @@
                     }
                     if(isset($_GET['vendor_user'])){
                         include("./vendor_pages/vendor_user.php");
+                    }
+                    if(isset($_GET['create_vendor'])){
+                        include("./vendor_pages/vendor_create.php");
                     }
                 ?>
 

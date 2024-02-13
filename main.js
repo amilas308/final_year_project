@@ -4,6 +4,10 @@ const textcol = document.getElementById('navBar');
 const acccol = document.getElementById('drop');
 const icolon  = document.getElementById('icol');
 const nav = document.getElementById('chntxt');
+const prodcut = document.getElementsByClassName('product-btn');
+prodcut.onlcick = () => {
+    prodcut.classList.add("active1");
+}
 // const edbtn = document.querySelector(".ed");
 // const edopen = document.querySelector(".edit_user");
 // const edclose = document.querySelector(".close-btn");
@@ -99,7 +103,7 @@ sin.onlcick = function(){
 // putRemove.onlclick = function(){
 //     putRemove.classList.add("active");
 // }
-var containUnder = document.getElementsByClassName("container-under");
+// var containUnder = document.getElementsByClassName("container-under");
 var btnShowRemove = document.getElementsByClassName("btn");
 for(var i = 0; i < btnShowRemove.length; i++){
     btnShowRemove[i].addEventListener("click", function(){
@@ -114,3 +118,16 @@ for(var i = 0; i < btnShowRemove.length; i++){
 window.addEventListener('click', appear);
 window.addEventListener('scroll', changeBg);
 window.addEventListener('scroll', aboutchng);
+
+showEdit = document.querySelector("#ed")
+closeEdit = document.querySelector("#closeEdit")
+dialog = document.querySelector("dialog")
+
+showEdit.addEventListener("click", () => {
+    dialog.showModal()
+})
+
+closeEdit.addEventListener("click", () => {
+    dialog.close()
+})
+

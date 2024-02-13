@@ -213,107 +213,124 @@
         <h2>Up to <span>70% off </span>- All Wrist-watches and accessories</h2>
         <button class="normal">Explore More</button>
     </section> -->
+    <!-- <dialog>
+        <button id="closeEdit">close</button>
+        
+    </dialog> -->
     <section class="product1 section-p1">
         <h2>New Arrivals</h2>
         <p>Summer Collection New Modern Design</p>
         <div class="pro-container">
             <div class="pro">
-                <img src="./imgproj/IMG-20230704-WA0026.jpg" alt="watch">
-                <div class="des">
-                    <span>Wrist Watch</span>
-                    <h5>Patek Philips</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <a href="./view_product.php">
+                    <img src="./imgproj/IMG-20230704-WA0026.jpg" alt="watch">
+                    <div class="des">
+                        <span>Wrist Watch</span>
+                        <h5>Patek Philips</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>&#8358;20,000</h4>
                     </div>
-                    <h4>&#8358;20,000</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </a>
             </div>
             <div class="pro">
-                <img src="./imgproj/IMG-20230629-WA0041.jpg" alt="watch2">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <a href="./view_product.php">
+                    <img src="./imgproj/IMG-20230704-WA0026.jpg" alt="watch">
+                    <div class="des">
+                        <span>Wrist Watch</span>
+                        <h5>Patek Philips</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>&#8358;20,000</h4>
                     </div>
-                    <h4>&#8358;78</h4>
-                </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </a>
             </div>
             <div class="pro">
-                <img src="./imgproj/IMG-20230629-WA0042.jpg" alt="watch3">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <a href="./view_product.php">
+                    <img src="./imgproj/IMG-20230704-WA0026.jpg" alt="watch">
+                    <div class="des">
+                        <span>Wrist Watch</span>
+                        <h5>Patek Philips</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>&#8358;20,000</h4>
                     </div>
-                    <h4>&#8358;78</h4>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </a>
                 </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="./imgproj/IMG-20230619-WA0023.jpg" alt="watch4">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="pro">
+                    <a href="./view_product.php">
+                    <img src="./imgproj/IMG-20230704-WA0026.jpg" alt="watch">
+                    <div class="des">
+                        <span>Wrist Watch</span>
+                        <h5>Patek Philips</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>&#8358;20,000</h4>
                     </div>
-                    <h4>&#8358;78</h4>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </a>
                 </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
-            <div class="pro">
-                <img src="./imgproj/IMG-20230629-WA0100.jpg" alt="watch5">
-                <div class="des">
-                    <span>Wrist Watch</span>
-                    <h5>AP Chronograph</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                <div class="pro">
+                    <a href="./view_product.php">
+                    <img src="./imgproj/IMG-20230704-WA0026.jpg" alt="watch">
+                    <div class="des">
+                        <span>Wrist Watch</span>
+                        <h5>Patek Philips</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>&#8358;20,000</h4>
                     </div>
-                    <h4>&#8358;10,000</h4>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </a>
                 </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
             <div class="pro">
-                <img src="./imgproj/IMG-20230704-WA0017.jpg" alt="watch6">
-                <div class="des">
-                    <span>Adidas</span>
-                    <h5>Cartoon Astronaut T-shirts</h5>
-                    <div class="star">
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
-                        <i class="fas fa-star"></i>
+                    <a href="./view_product.php">
+                    <img src="./imgproj/IMG-20230704-WA0026.jpg" alt="watch">
+                    <div class="des">
+                        <span>Wrist Watch</span>
+                        <h5>Patek Philips</h5>
+                        <div class="star">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                        <h4>&#8358;20,000</h4>
                     </div>
-                    <h4>&#8358;78</h4>
+                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                </a>
                 </div>
-                <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-            </div>
             <div class="pro">
+            <a href="./view_product.php">
                 <img src="./imgproj/IMG-20230624-WA0004.jpg" alt="watch6">
                 <div class="des">
                     <span>Adidas</span>
@@ -328,8 +345,10 @@
                     <h4>$78</h4>
                 </div>
                 <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </a>
             </div>
             <div class="pro">
+            <a href="./view_product.php">
                 <img src="./imgproj/IMG-20230629-WA0039.jpg" height="200" alt="img">
                 <div class="des">
                     <span>Adidas</span>
@@ -344,8 +363,10 @@
                     <h4>&#8358;78</h4>
                 </div>
                 <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </a>
             </div>
             <div class="pro">
+            <a href="./view_product.php">
                 <img src="./img/glass1.jpg" height="200" alt="img">
                 <div class="des">
                     <span>Adidas</span>
@@ -360,8 +381,10 @@
                     <h4>&#8358;78</h4>
                 </div>
                 <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </a>
             </div>
             <div class="pro dissapear">
+            <a href="./view_product.php">
                 <img src="./img/glass1.jpg" height="200" alt="img">
                 <div class="des">
                     <span>Adidas</span>
@@ -376,8 +399,10 @@
                     <h4>&#8358;78</h4>
                 </div>
                 <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </a>
             </div>
             <div class="pro dissapear">
+            <a href="./pages/view_product.php">
                 <img src="./img/glass1.jpg" height="200" alt="img">
                 <div class="des">
                     <span>Adidas</span>
@@ -392,8 +417,10 @@
                     <h4>&#8358;78</h4>
                 </div>
                 <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </a>
             </div>
             <div class="pro dissapear">
+            <a href="./view_product.php">
                 <img src="./img/glass1.jpg" height="200" alt="img">
                 <div class="des">
                     <span>Adidas</span>
@@ -408,6 +435,7 @@
                     <h4>&#8358;78</h4>
                 </div>
                 <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+            </a>
             </div>
         </div>
     </section>

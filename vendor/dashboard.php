@@ -36,9 +36,9 @@
             <div class="user">
                 <div class="user-info">
                     <h3><?php echo $_SESSION['username']; ?></h3>
-                    <span><?php echo $_SESSION['role']; ?></span>
+                    <span><?php  $_SESSION['role']; ?></span>
                 </div>
-                <img src="../glass1.jpg" alt="User-image">
+                <img src="../img/glass1.jpg" alt="User-image">
             </div>
         </nav>
         <div class="container-under">
@@ -51,20 +51,20 @@
                     <i class="fas fa-person move"></i>
                     <span>Profile</span>
                 </a>
-                <a href="#" class="btn">
+                <a href="dashboard.php?product" class="btn<?php echo isset($_GET['product']) ? ' active': ''; ?>">
                     <i class="fas fa-shop move"></i>
                     <span>Product</span>
                 </a>
                 <?php if($_SESSION['username'] == 'admin'): ?>
-                <a href="dashboard.php?vendor_user" class="btn">
+                <a href="dashboard.php?vendor_user" class="btn <?php echo isset($_GET['vendor_user']) ? ' active': ''; ?>">
                     <i class="fas fa-shop move"></i>
                     <span>Vendor</span>
                 </a>
-                <a href="#" class="btn">
+                <a href="dashboard.php?category" class="btn <?php echo isset($_GET['category']) ? ' active': ''; ?>">
                     <i class="fas fa-shop move"></i>
                     <span>Categories</span>
                 </a>
-                <a href="dashboard.php?vendor_user" class="btn <?php echo isset($_GET['vendor_user']) ? ' active': ''; ?>">
+                <a href="dashboard.php?vendor_user" class="btn">
                     <i class="fas fa-shop move"></i>
                     <span>Test</span>
                 </a>
@@ -84,6 +84,18 @@
                     }
                     if(isset($_GET['create_vendor'])){
                         include("./vendor_pages/vendor_create.php");
+                    }
+                    if(isset($_GET['category'])){
+                        include("./vendor_pages/categories.php");
+                    }
+                    if(isset($_GET['categories_create'])){
+                        include("./vendor_pages/cateogories_create.php");
+                    }
+                    if(isset($_GET['product'])){
+                        include("./vendor_pages/product.php");
+                    }
+                    if(isset($_GET['product_create'])){
+                        include("./vendor_pages/product_create.php");
                     }
                 ?>
 

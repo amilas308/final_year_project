@@ -1,38 +1,54 @@
 <?php include "./include/other_header.php"; 
 ?>
-<div class="space">
-<div class="viewproduct">
-    <div class="viewimg">
-        <img src="./image/clock.jpg" height="300" alt="clock not seen">
-        <div class="item-name">
-            <h5>Big Wall clock</h5>
-        </div>
-    </div>
-    <div class="viewdetail">
-        <!-- <h3>Wrist watch</h3> -->
-        <h4>Description</h4>
-        <p>
-            The finest cool watch you can ever but Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-            Ab quidem sit inventore omnis rem fuga reiciendis quas saepe eius nostrum.
-        </p>
-        <div class="vendor-detail">
-            <h5>Vendor: <span>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ea, nisi.</span></h5>
-        </div>
-        <div class="complete">
-            <div class="complete-btn">
-                <span class="quan-name">Quantity</span>
-                <button>-</button>
-                <span class="quan">1</span>
-                <button>+</button>
-            </div>
-            <div class="complete-price">
-                <span>Price: $30,000</span>
-            </div>
-        </div>
-        <div class="purchase-cart">
-            <button><a href="#">Cart</a></button>
-            <button><a href="#">Complete Order</a></button>
-        </div>
-    </div>
-</div>
-</div>
+<?php
+    if(isset($_GET['view'])){
+        $product_id = $_GET['view'];
+        // echo $product_id;
+        $sql = "SELECT * FROM `product` WHERE `prod_id` = '$product_id'";
+        $query = mysqli_query($conn, $sql);
+        $result = mysqli_fetch_assoc($query);
+        if($result){
+            ?>
+            <form action="./checkout.php?checkoutid=<?= $result['prod_id'];?>" method="post">
+                <div class="space">
+                <div class="viewproduct">
+                    <div class="viewimg">
+                        <?php //var_dump($result['prod_image']); ?>
+                        <img src="./vendor/vendor_pages/prod-image/<?php echo $result['prod_image']; ?>" height="300" alt="clock not seen">
+                        <div class="item-name">
+                            <h5><?php echo $result['prod_name']; ?></h5>
+                        </div>
+                    </div>
+                    <div class="viewdetail">
+                        <!-- <h3>Wrist watch</h3> -->
+                        <h4>Description</h4>
+                        <p>
+                            <?php echo $result['prod_description']; ?>
+                        </p>
+                        <div class="vendor-detail">
+                            <h5>Vendor: <span>Admin</span></h5>
+                        </div>
+                        <div class="complete">
+                            <div class="complete-btn">
+                                <span class="quan-name">Quantity</span>
+                                <input type="number" name="quantity" value="1" id="quan">
+                            </div>
+                            <div class="complete-price">
+                                <span>&#8358;<?php echo ' '.number_format($result['prod_price'],2); ?></span>
+                            </div>
+                        </div>
+                        <div class="purchase-cart">
+                            <input type="hidden" name="name" value="<?= $result['prod_name'];?>">
+                            <input type="hidden" name="price" value="<?= number_format($result['prod_price'],2);?>">
+                            <input type="submit" name="add-to-cart" value="Cart">
+                            <input type="submit" name="check-submit" value="Complete Order">
+                        </div>
+                        <?php //endif;?>
+                    </div>
+                </div>
+                </div>
+     <?php
+            }
+    }
+    ?>
+    </form>

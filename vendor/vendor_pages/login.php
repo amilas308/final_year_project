@@ -20,6 +20,20 @@
             $_SESSION['role'] = $role;
             header("Location: ../dashboard.php");
         }
+        $sql = "SELECT * FROM `vendor_users` WHERE `brand_name` = '$username'";
+        $sel_query = mysqli_query($conn,$sql);
+        $result = mysqli_fetch_assoc($sel_query);
+        if($result){
+            if(password_verify($password, $result['password'])){
+                session_start();
+                session_regenerate_id();
+                $role = $result['role'];
+                $_SESSION['username'] = $result['brand_name'];
+                $_SESSION['role'] = $role;
+                header("Location: ../dashboard.php");
+            }
+        }
+
     }
 
 ?>
@@ -56,7 +70,7 @@
                 <form action="" method="post">
                     <div class="form-login">
                         <i class="fas fa-user"></i>
-                        <input type="text" name="username" id="username" placeholder="Enter your user name">
+                        <input type="text" name="username" id="username" placeholder="Enter your user name/email">
                     </div>
                     <div class="form-login">
                         <i class="fas fa-lock"></i>

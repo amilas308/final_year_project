@@ -1,5 +1,5 @@
 <?php
-    require_once '/xampp/htdocs/porject/connect.php';
+    require_once '.././connect.php';
     if(isset($_POST['submit'])){
         $full_name  = $_POST['full-name'];
         $email = htmlspecialchars($_POST['email']);
@@ -10,21 +10,25 @@
         $pass = htmlspecialchars($_POST['pass']);
         $password_hash = password_hash($pass, PASSWORD_DEFAULT);
         $caught = "";
+        $sel_query = "SELECT * FROM `vendor_users` WHERE `email` = '$email'";
+        $sel_result = mysqli_query($conn, $sel_query);
+        $num_avail = mysqli_num_rows($sel_result);
         try {
-            //code...
-            $sql = "INSERT INTO `vendor_users`(`full_name`,`email`,`phonenumber`,`brand_name`,`address`,`role`,`password`) VALUES('$full_name','$email','$phone','$brand','$address','$role','$password_hash')";
-            // if( === "Duplicate entry"){
-                // throw new Exception("The email has already been taking");
-            // }
-            if(mysqli_query($conn, $sql)){
-                echo "<script>alert('Vendor registered Successfully')</script>";
-                header("Location: ../vendor/dashboard.php?create_vendor");
-            }
-        } catch (Exception $e) {
-            $caught = $e->getMessage() . ' ' ."Email already taken";
-            //throw $th;
-        }
-    }
+             if($num_avail > 0){
+                 echo "<script>alert('Vendor Already exist')</script>";
+             } else{
+                    $sql = "INSERT INTO `vendor_users`(`full_name`,`email`,`phonenumber`,`brand_name`,`address`,`role_id`,`password`) VALUES('$full_name','$email','$phone','$brand','$address','$role','$password_hash')";
+                    if(mysqli_query($conn, $sql)){
+                        echo "<script>alert('Vendor registered Successfully')</script>";
+                        header("Location: ../vendor/dashboard.php?create_vendor");
+                        exit();
+                    } 
+                }
+         } catch (Exception $e) {
+             $caught = $e->getMessage() . ' ' ."Please enter the details correctly";
+             //throw $th;
+         }
+}
 
 ?>
 <div class="create-vendor">

@@ -56,7 +56,7 @@
     grid-template-columns: 20% 80%;
 }
 .container-all .container-under aside{
-    height: 84vh;
+    height: 90vh;
     padding-left: 10px;
     background-color: #088178;
     display: flex;
@@ -129,6 +129,7 @@
     width: 100%;
     /* background-color: #f6f6f6; */
     /* text-align: right; */
+    overflow: hidden;
     border-top-right-radius: 12px;
     border-top-left-radius: 12px;
     /* display: block;    */
@@ -148,6 +149,7 @@
 .container-all .container-under main .container-card table tbody tr td{
     /* border-top: 1px solid #a9a8a8; */
     border-bottom: 1px solid #088178;
+    overflow: hidden;
     padding: 12px 0 12px 4px;
     background-color: #f6f6f6;
 }
@@ -269,6 +271,7 @@
 .add-user .body-vendor table th{
     border-bottom: 1px solid #ddd;
     padding: 8px;
+    text-align: left;
 }
 .add-user .body-vendor table td{
     border-bottom: 1px solid #ddd;
@@ -351,3 +354,285 @@
     display: none;
 }
 /* Create Vendor end */
+/* categories */
+.catego{
+    padding: 60px 40px;
+}
+.catego .catego-head{
+    display: flex;
+    justify-content: space-between;
+}
+.catego .catego-head h2{
+    font-size: 29px;
+}
+.catego .catego-head button{
+    padding: 10px;
+    background-color: #34b3ab;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    transition: 400ms ease-out;
+}
+.catego .catego-head button a{
+    text-decoration: none;
+    color: #fff;
+}
+.catego .catego-head button:hover{
+    box-shadow: 3px 4px 4px 0 rgba(0, 0, 0, 0.12);
+    opacity: .7;
+}
+.catego table{
+    margin-top: 40px;
+    border-collapse: collapse;
+    width: 100%;
+}
+.catego table thead{
+    background-color: #088178;
+    color: #fff;
+}
+.catego table thead th{
+    padding: 14px 0;
+    text-align: left;
+}
+.catego table tbody td{
+    padding: 9px 0;
+}
+.catego table tbody td button.edit_btn{
+    padding: 4px 8px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #34b3ab;
+    color: #fff;
+    transition: 400ms ease-out;
+}
+.catego table tbody td button.edit_btn:hover{
+    opacity: .7;
+}
+.catego table tbody td button.edit_btn a{
+    text-decoration: none;
+    color: #fff;
+}
+.catego table tbody td button.delete_btn{
+    padding: 4px 8px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #f90808;
+    color: #fff;
+    transition: 400ms ease-out;
+}
+.catego table tbody td button.delete_btn:hover{
+    opacity: .7;
+}
+.catego table tbody td button.delete_btn a{
+    text-decoration: none;
+    color: #fff;
+}
+.catego table tbody tr:nth-child(even){
+    background-color: #ddd;
+}
+/* categories end */
+/* categories create */
+.categocreate{
+    position: relative;
+    top: 15%;
+    padding: 0 40px;
+}
+.categocreate h2{
+    text-align: center;
+    font-size: 29px;
+    letter-spacing: .4rem;
+    color: #34b3ab;
+}
+.categocreate form{
+    margin-top: 30px;
+}
+.categocreate form .form-input input{
+    width: 100%;
+    padding: 10px;
+}
+.categocreate form  input[type="submit"]{
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #088178;
+    color: #fff;
+    outline: none;
+    border: none;
+    transition: 400ms ease-in;
+    cursor: pointer;
+}
+.categocreate form  input[type="submit"]:hover{
+    background-color: #34b3ab;
+    opacity: .7;
+}
+/* categories end */
+/* product  */
+.produst-page{
+    margin-top: 40px;
+    padding: 5px 20px;
+}
+.produst-page .product-head{
+    display: flex;
+    justify-content: space-between;
+}
+.produst-page .product-head h2{
+    font-size: 28px;
+    letter-spacing: .3rem;
+}
+.produst-page .product-head button{
+    padding: 9px;
+    background-color: #34b3ab;
+    color: #fff;
+    outline: none;
+    border: none;
+}
+.produst-page .product-head button a{
+    text-decoration: none;
+    color: #fff;
+}
+.produst-page table{
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 30px;
+}
+/* .produst-page table thead {
+} */
+.produst-page table thead tr{
+    background-color: #088178;
+}
+.produst-page table thead tr th{
+    padding: 14px 0;
+    color: #fff;
+    text-align: left;
+}
+.produst-page table tbody tr td{
+    padding: 10px 4px;
+    /* border-right: 1px solid #000; */
+}
+/* .produst-page table tbody tr{
+} */
+.produst-page table tbody tr:nth-child(even){
+    background-color: #ddd;
+}
+.produst-page table tbody td button.edit_btn{
+    padding: 4px 8px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #34b3ab;
+    color: #fff;
+    transition: 400ms ease-out;
+}
+.produst-page table tbody td button.edit_btn:hover{
+    opacity: .7;
+}
+.produst-page table tbody td button.edit_btn a{
+    text-decoration: none;
+    color: #fff;
+}
+.produst-page table tbody td button.delete_btn{
+    padding: 4px 8px;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    background-color: #f90808;
+    color: #fff;
+    transition: 400ms ease-out;
+}
+.produst-page table tbody td button.delete_btn:hover{
+    opacity: .7;
+}
+.produst-page table tbody td button.delete_btn a{
+    text-decoration: none;
+    color: #fff;
+}
+/* product end */
+/* product create  */
+.create-product{
+    margin-top: 30px;
+    margin-left: 40px;
+}
+.create-product h2{
+    text-align: center;
+    font-size: 29px;
+    letter-spacing: .3rem;
+}
+.create-product form{
+    margin-top: 20px;
+    display: grid;
+    gap: 5px;
+    padding-right: 5px;
+    grid-template-columns: repeat(3, 1fr);
+    /* grid-template-columns: repeat(4, 290px); */
+}
+.create-product form .form-input{
+    /* width: 100%; */
+    padding: 10px;
+}
+.create-product form .form-input input{
+    width: 100%;
+    padding: 5px;
+    font-size: 15px;
+}
+.create-product form .form-input input:active{
+    border: 1px solid #34b3ab;
+}
+.create-product form .form-input.second{
+    width: 100%;
+    padding: 5px;
+    margin-top: 5px;   
+}
+.create-product form .form-input.second select{
+    padding: 9px;
+    width: 100%;
+    cursor: pointer;
+    /* appearance: none; */
+    /* display: none; */
+}
+.create-product form .form-input.second select option{
+    padding: 5px;
+    min-height: 2.4rem;
+}
+.create-product form .form-input:nth-child(5){
+    grid-row-start: 2;
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+.create-product form .form-input input[type="file"]{
+    border: 1px solid #ddd;
+    padding: 0;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    cursor: pointer;
+}
+.create-product form .form-input input[type="file"]::file-selector-button{
+    background-color: #34b3ab;
+    cursor: pointer;
+    color: #fff;
+    height: 40px;
+    border: none;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
+    /* padding: 9px 4px; */
+}
+.create-product form .form-input:last-child{
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 9;
+}
+.create-product form .form-input:last-child input{
+    background-color: #34b3ab;
+    color: #fff;
+    padding: 9px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: 400ms ease-out;
+    outline: none;
+    border: none;
+}
+.create-product form .form-input:last-child input:hover{
+    opacity: .7;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
+}
+/* product create end */

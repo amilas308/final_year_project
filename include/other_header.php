@@ -3,6 +3,7 @@
     session_start();
     if(isset($_SESSION['id'])){
         $sql = sprintf("SELECT * FROM `customer_users` WHERE user_id = {$_SESSION['id']}");
+        session_regenerate_id();
         $result = $conn->query($sql);
         $user = $result->fetch_assoc();
         $name = $user['first_name'];
@@ -55,6 +56,7 @@
                                             <button id="ed">
                                                 <a href="/porject/pages/edit_user.php?editid=<?php echo $user['user_id'] ?>" class="ed">Edit</a>
                                             </button>
+                                            <a href="/porject/order.php" class="ord">Order</a>
                                             <a href="/porject/pages/logout.php" class="sin">Log out</a>
                                         </div>
                                     </div>

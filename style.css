@@ -247,6 +247,18 @@ body .header-nav{
     border-bottom-left-radius: 10px;
     /* border-bottom-right-radius: 10px; */
 }
+.dropdown-content a.ord{
+    display: block;
+    text-decoration: none;
+    padding: 4px 4px 4px 4px;
+    background-color: #e3ca09;
+    color: #fff;
+    margin-bottom: 4px;
+    border-top: #e3ca09 1px solid;
+    border-bottom: #e3ca09 1px solid;
+    /* border-bottom-left-radius: 10px; */
+    /* border-bottom-right-radius: 10px; */
+}
 .hero{
     display: flex;
     align-items: center;
@@ -347,7 +359,7 @@ body .header-nav{
 }
 .product1 .pro-container{
     display: grid;
-    grid-template-columns: repeat(5, 1fr);
+    grid-template-columns: repeat(7, 1fr);
     align-items: center;
     /* grid-auto-rows: 80px; */
     grid-gap: 9px;
@@ -1031,13 +1043,15 @@ div.about-navbar1 div.about-heading{
 }
 .viewproduct .viewdetail .complete .complete-btn{
     display: flex;
-    /* gap: 7px; */
+    flex-direction: column;
+    gap: 7px;
 }
-.viewproduct .viewdetail .complete .complete-btn button{
+.viewproduct .viewdetail .complete .complete-btn input{
     background-color: #fff;
     border: #ddd 1px solid;
-    padding: .2px 8px;
-    font-size: 19px;
+    padding: 5px 8px;
+    font-size: 15px;
+    outline: none;
     cursor: pointer;
 }
 .viewproduct .viewdetail .complete .complete-btn span.quan-name{
@@ -1077,6 +1091,183 @@ div.about-navbar1 div.about-heading{
 .viewproduct .viewdetail .purchase-cart button:first-child{
     padding: 15px 75px;
 }
+/* --------------------for order and checkout stylings---------------------- */
+/* body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  } */
+  
+  .order-container, .checkout-container {
+    max-width: 600px;
+    margin: 100px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 800px;
+    height: 500px;
+  }
+  .checkoutbody{
+    display: grid;
+    margin: 10px 0 10px 90px;
+    gap: 100px;
+    grid-template-columns: 600px 400px;
+  }
+  .checkoutbody .productbody{
+    width: 300px;
+    margin-top: 100px;
+    height: 300px;
+    border: 1px solid #088178;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.02);
+  }
+  .checkoutbody .productbody .productdisplay{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 4px;
+  }
+  .checkoutbody .productbody .productdisplay .proddisp h5{
+    font-weight: 400;
+    margin-top: 9px;
+  }
+  .checkoutbody .productbody .productdisplay .proddisp label{
+    font-weight: 700;
+    
+  }
+  .prc{
+    color: rgb(239, 40, 40);
+  }
+  .total{
+    color: #088178;
+  }
+  .checkoutbody .productbody .productdisplay .proddisp:last-child{
+    margin-top: 10px;
+  }
+  .checkoutbody .productbody .productdisplay .proddisp.ann{
+    margin-top: 10px;
+  }
+  .checkoutbody .productbody h2{
+    text-align: center;
+    font-size: 19px;
+    font-weight: bold;
+    color: #000;
+
+  }
+  .checkout-container h2{
+    text-align: center;
+    font-size: 19px;
+    color: #000;
+  }
+  .checkout-container form{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(4, 100px);
+  }
+  .checkout-container form div.form-element{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+  }
+  .checkout-container form div.form-element label{
+    font-weight: 700;
+  }
+  .checkout-container form div.form-element h5{
+    font-weight: 200;
+  }
+  .checkout-container form div.form-element.add input{
+    /* grid-column-start: 2;
+    grid-column-end: 2; */
+    width: 206%;
+    padding: 10px;
+  }
+  .checkout-container form div.form-element select,
+    .checkout-container form div.form-element input{
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid #1aded1;
+  }
+  
+  .checkout-container form .form-element:last-child{
+    grid-column: 1/4;
+    grid-row-start: 4;
+    display: block;
+    /* margin: -10px; */
+}
+.checkout-container form .form-element:last-child input[type="submit"]{
+  background-color: #088178;
+  padding: 15px;
+  color: #fff;
+  outline: none;
+  border-radius: 10px;
+  cursor: pointer;
+  }
+.checkout-container form .form-element:last-child input[type="submit"]:hover{
+    opacity: .7;
+}
+  .product-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .product-list li {
+    margin-bottom: 10px;
+  }
+  
+  .checkout-button, .edit-contact-button {
+    display: inline-block;
+    padding: 10px;
+    margin-right: 10px;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .checkout-button:hover, .edit-contact-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .button-container {
+    margin-top: 20px;
+  }
+  
+/* --------------------for order and checkout stylings end---------------------- */
+/* --------------------for order ---------------------- */
+.display-order{
+    margin: 120px 80px 0 80px;
+}
+.display-order h5{
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: .4rem;
+    font-family: Verdana;
+    margin-bottom: 45px;
+}
+.display-order table{
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 30px;
+    /* border: 1px solid #000; */
+    box-shadow:  15px 15px 15px 15px rgba(1, 0, 0, .1);
+}
+.display-order table th{
+    padding: 10px;
+    text-align: left;
+    background-color: #06735a;
+    color: #fff;
+}
+.display-order table tbody tr{
+    border: 1px solid #ddd;
+}
+.display-order table td{
+    padding: 15px 9px;
+}
+/* --------------------for order  end---------------------- */
 /* view product */
 /* About page styling end */
 @media (max-width: 1086px){

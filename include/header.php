@@ -55,6 +55,7 @@
                                             <button id="ed">
                                                 <a href="/porject/pages/edit_user.php?editid=<?php echo $user['user_id'] ?>" class="ed">Edit</a>
                                             </button>
+                                            <a href="/porject/order.php" class="ord">Order</a>
                                             <a href="/porject/pages/logout.php" class="sin">Log out</a>
                                         </div>
                                     </div>

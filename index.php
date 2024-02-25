@@ -221,25 +221,35 @@
         <h2>New Arrivals</h2>
         <p>Summer Collection New Modern Design</p>
         <div class="pro-container">
-            <div class="pro">
-                <a href="./view_product.php">
-                    <img src="./imgproj/IMG-20230704-WA0026.jpg" alt="watch">
-                    <div class="des">
-                        <span>Wrist Watch</span>
-                        <h5>Patek Philips</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+        <?php
+            $sql = "SELECT * FROM `product`LEFT JOIN `categories` ON product.prod_categ = categories.category_id ORDER BY RAND()";
+            $query = mysqli_query($conn, $sql);
+            $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+            // var_dump($result);
+            foreach($result as $item){ 
+                ?>
+                
+                    <div class="pro">
+                    <a href="./view_product.php?view=<?php echo $item['prod_id']; ?>">
+                        <img src="./vendor/vendor_pages/prod-image/<?php echo $item['prod_image']; ?>" alt="watch">
+                        <div class="des">
+                            <span><?php echo $item['category_name']; ?></span>
+                            <h5><?php echo $item['prod_name']; ?></h5>
+                            <div class="star">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <h4>&#8358;<?php echo ' '.number_format($item['prod_price'],2); ?></h4>
                         </div>
-                        <h4>&#8358;20,000</h4>
-                    </div>
-                    <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
-                </a>
-            </div>
-            <div class="pro">
+                     <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
+                    </a>
+                </div>
+                <?php
+             }?>
+            <!-- <div class="pro">
                 <a href="./view_product.php">
                     <img src="./imgproj/IMG-20230704-WA0026.jpg" alt="watch">
                     <div class="des">
@@ -436,7 +446,7 @@
                 </div>
                 <a href="#"><i class="fal fa-shopping-cart cart"></i></a>
             </a>
-            </div>
+            </div> -->
         </div>
     </section>
     <!-- <section id="collectives" class="section-p1">

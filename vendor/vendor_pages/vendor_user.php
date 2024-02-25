@@ -8,21 +8,38 @@
             <thead>
                 <tr>
                     <th>Full Name</th>
-                    <th>Brand Name</th>
+                    <th>Email</th>
                     <th>Phone Number</th>
-                    <th>Description</th>
+                    <th>Brand Name</th>
                     <th>Location</th>
+                    <th>Role</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
+                <?php
+                    require_once ".././connect.php";
+                    $sql = "SELECT * FROM `vendor_users` LEFT JOIN `roles` ON vendor_users.role_id = roles.role_id ORDER BY date DESC";
+                    // $sql = "SELECT role_id FROM `vendor_users`";
+                    $query = mysqli_query($conn, $sql);
+                    $result  = mysqli_fetch_all($query, MYSQLI_ASSOC);
+                    // var_dump($result);
+                ?>
+                <?php foreach($result as $item): ?>
                 <tr>
-                <td>Bilal Aliyu</td>
-                <td>Btech@industry</td>
-                <td>08162888541</td>
-                <td>RIngs and bags sales</td>
-                <td>Opp. BUK new site Kano</td>
+                    <td><?php echo $item['full_name']; ?></td>
+                    <td><?php echo $item['email']; ?></td>
+                    <td><?php echo $item['phonenumber']; ?></td>
+                    <td><?php echo $item['brand_name']; ?></td>
+                    <td><?php echo $item['address']; ?></td>
+                    <td><?php echo $item['Role']; ?></td>
+                    <td>
+                        <button class="edit_btn"><a href="#">Edit</a></button>
+                        <button class="delete_btn"><a href="#">Delete</a></button>
+                    </td>
                 </tr>
-                <tr>
+                <?php endforeach; ?>
+                <!-- <tr>
                 <td>Full Name</td>
                 <td>Brand Name</td>
                 <td>Phone Number</td>
@@ -56,7 +73,7 @@
                 <td>0906535425</td>
                 <td>Garllic and Ginger Sales</td>
                 <td>Wurno Bayan Masallachin Sarki Sokoto</td>
-                </tr>
+                </tr> -->
             </tbody>
         </table>
     </div>

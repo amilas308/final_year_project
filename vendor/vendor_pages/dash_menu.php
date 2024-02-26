@@ -1,13 +1,32 @@
 
 <div class="container-topping">
-    <h2>Registered Product</h2>
+    <?php
+        require '../../porject/connect.php';
+        $order_sql = "SELECT COUNT(*) AS incoming_orders FROM `order`";
+        $order_query = mysqli_query($conn,$order_sql);
+        $result = mysqli_fetch_assoc($order_query);
+        if($result){
+            // echo "Total Order". ' ' . $result['incoming_orders'];
+            $order = "Total Orders" . ' ' . $result['incoming_orders'];
+            // $row = $result->fetch_assoc();
+
+        }
+        // $prod_sql = "SELECT COUNT(*) AS number_product FROM `product`";
+        // $prod_query = mysqli_query($conn,$prod_query);
+        // $vend_sql = "SELECT COUNT(*) AS number_vendor FROM `vendor_users`";
+        // $vend_query = mysqli_query($conn,$vend_sql);
+
+    ?>
+    <!-- <h2>Registered Product</h2>
     <form action="" method="post">
         <input type="search" placeholder="search" name="search" id="">
         <button name="submit" class="sech-btn"><i class="fas fa-search"></i></button>
-    </form>
-</div>
+    </form> -->
+
 <div class="container-card">
-    <table>
+    <?php echo $order;?>
+    <!-- <table>
+        //$order
         <thead>
             <tr>
                 <th>product_id</th>
@@ -42,5 +61,6 @@
                 <td>Status</td>
             </tr>
         </tbody>
-    </table>
+    </table> -->
+</div>
 </div>

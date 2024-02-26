@@ -41,7 +41,7 @@
                             <li><a href="index.php">Home</a></li>
                             <!-- <li><a href="shop.html">Shop</a></li> -->
                             <li><a class="active1" href="./about.php">About</a></li>
-                            <li><a href="./pages/product.php" class="product-btn">Product</a></li>
+                            <!-- <li><a href="./pages/product.php" class="product-btn">Product</a></li> -->
                             <?php if(isset($user)): ?>
                                 <div class="dropdown">
                                     <button id="drop" class="about-dropbtn">Account</button>

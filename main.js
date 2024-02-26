@@ -112,7 +112,7 @@ for(var i = 0; i < btnShowRemove.length; i++){
         current[0].className = current[0].className.replace("active", "");
     }
         this.className += " active";
-        alert("I am working");
+        // alert("I am working");
     });
 }
 window.addEventListener('click', appear);

@@ -1,0 +1,154 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Receipt</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .receipt {
+            border: 2px solid #000;
+            padding: 20px;
+            max-width: 400px;
+            margin: auto;
+        }
+
+        .header {
+            text-align: center;
+            font-size: 20px;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .order-info {
+            margin-bottom: 15px;
+        }
+
+        .order-info span {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .products {
+            border-collapse: collapse;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+
+        .products th, .products td {
+            border: 1px solid #000;
+            padding: 8px;
+            text-align: left;
+        }
+
+        .footer {
+            text-align: right;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="receipt">
+        <div class="header">Receipt</div>
+
+        <div class="order-info">
+            <span>Order ID: <span id="orderID">123456</span></span>
+            <span>Customer Name: <span id="customerName">John Doe</span></span>
+        </div>
+
+        <table class="products">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                 Product details will go here 
+                <tr>
+                    <td>Product 1</td>
+                    <td>2</td>
+                    <td>&#8358;20.00</td>
+                </tr>
+                 Add more rows for additional products if needed 
+            </tbody>
+        </table>
+
+        <div class="footer">Total: &#8358;40.00</div>
+    </div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./style.css">
+    <title>Receipt</title>
+    <style>
+        /* Your existing CSS styles here */
+    </style>
+</head>
+<body>
+
+    <div class="receipt">
+        <h1>Receipt</h1>
+        <div class="order-info">
+            <span class="shif">Order ID: <span id="orderID">123456</span></span>
+            <span class="shif">Consumer Name<span id="customerName">John Doe</span></span>
+            <span class="shif">Product<span>Phalcon</span></span>
+            <span class="shif">Price<span>&#8358;3000</span></span>
+            <span class="shif">shipping Fee<span>&#8358;50</span></span>
+        </div>
+        <!-- <div class="prod-info">
+            
+            
+        </div> -->
+       <!--  <table class="products">
+            <thead>
+                <tr>
+                    <th>Product Name</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                </tr>
+            </thead>
+            <tbody>
+                Product details will go here 
+                <tr>
+                    <td>Product 1</td>
+                    <td>2</td>
+                    <td>$20.00</td>
+                </tr>
+                -- Add more rows for additional products if needed --
+            </tbody>
+        </table>-->
+
+        <span>Total: &#8358;3040.00</span>
+
+        <!-- Print button -->
+        <button onclick="printReceipt()">Print Receipt</button>
+    </div>
+
+    <script>
+        function printReceipt() {
+            var printContents = document.querySelector('.receipt').innerHTML;
+            var originalContents = document.body.innerHTML;
+
+            document.body.innerHTML = printContents;
+
+            window.print();
+
+            document.body.innerHTML = printContents;
+        }
+    </script>
+
+</body>
+</html>
+

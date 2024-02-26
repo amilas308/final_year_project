@@ -43,14 +43,14 @@
         </nav>
         <div class="container-under">
             <aside>
-                <a href="dashboard.php?dash_menu" id="" class="btn <?php echo isset($_GET['dash_menu']) ? ' active': ''; ?>">
+                <!-- <a href="dashboard.php?dash_menu" id="" class="btn <?php echo isset($_GET['dash_menu']) ? ' active': ''; ?>">
                     <i class="fas fa-dashboard move"></i>
                     <span>Dashboard</span>
-                </a>
-                <a href="#" class="btn">
+                </a> -->
+                <!-- <a href="#" class="btn">
                     <i class="fas fa-person move"></i>
                     <span>Profile</span>
-                </a>
+                </a> -->
                 <a href="dashboard.php?product" class="btn<?php echo isset($_GET['product']) ? ' active': ''; ?>">
                     <i class="fas fa-shop move"></i>
                     <span>Product</span>
@@ -64,10 +64,10 @@
                     <i class="fas fa-shop move"></i>
                     <span>Categories</span>
                 </a>
-                <a href="dashboard.php?vendor_user" class="btn">
+                <!-- <a href="dashboard.php?vendor_user" class="btn">
                     <i class="fas fa-shop move"></i>
                     <span>Test</span>
-                </a>
+                </a> -->
                 <?php endif; ?>
                 <a  class="btn" href="./vendor_pages/logout.php">
                     <i class="fas fa-phone move"></i>

@@ -43,10 +43,7 @@
         </nav>
         <div class="container-under">
             <aside>
-                <!-- <a href="dashboard.php?dash_menu" id="" class="btn <?php echo isset($_GET['dash_menu']) ? ' active': ''; ?>">
-                    <i class="fas fa-dashboard move"></i>
-                    <span>Dashboard</span>
-                </a> -->
+
                 <!-- <a href="#" class="btn">
                     <i class="fas fa-person move"></i>
                     <span>Profile</span>
@@ -56,6 +53,10 @@
                     <span>Product</span>
                 </a>
                 <?php if($_SESSION['username'] == 'admin'): ?>
+                <a href="dashboard.php?dash_menu" id="" class="btn <?php echo isset($_GET['dash_menu']) ? ' active': ''; ?>">
+                    <i class="fas fa-dashboard move"></i>
+                    <span>Dashboard</span>
+                </a>
                 <a href="dashboard.php?vendor_user" class="btn <?php echo isset($_GET['vendor_user']) ? ' active': ''; ?>">
                     <i class="fas fa-shop move"></i>
                     <span>Vendor</span>
@@ -64,11 +65,11 @@
                     <i class="fas fa-shop move"></i>
                     <span>Categories</span>
                 </a>
-                <!-- <a href="dashboard.php?vendor_user" class="btn">
-                    <i class="fas fa-shop move"></i>
-                    <span>Test</span>
-                </a> -->
                 <?php endif; ?>
+                <a href="dashboard.php?order" class="btn<?php echo isset($_GET['order']) ? ' active': ''; ?>">
+                    <i class="fas fa-shop move"></i>
+                    <span>Order</span>
+                </a>
                 <a  class="btn" href="./vendor_pages/logout.php">
                     <i class="fas fa-phone move"></i>
                     <span>Log Out</span>
@@ -78,6 +79,9 @@
                 <?php
                     if(isset($_GET['dash_menu'])){
                         include("./vendor_pages/dash_menu.php");
+                    }
+                    if(isset($_GET['order'])){
+                        include("./vendor_pages/orders.php");
                     }
                     if(isset($_GET['vendor_user'])){
                         include("./vendor_pages/vendor_user.php");

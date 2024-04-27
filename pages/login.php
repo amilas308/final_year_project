@@ -3,8 +3,9 @@
     // $email = $_POST['email'];
     if($_SERVER['REQUEST_METHOD'] === 'POST'){
         // if(isset($_POST['submit'])){
-        $sql = sprintf("SELECT * FROM `customer_users` WHERE email = '%s'", $conn->real_escape_string($_POST['email']));
+        $sql = sprintf("SELECT * FROM `customer_users1` WHERE email = '%s'", $conn->real_escape_string($_POST['email']));
         $result = $conn->query($sql);
+        var_dump($result);
         $user = $result->fetch_assoc();
         // echo $user['user_id'];
         if($user){
@@ -12,7 +13,7 @@
             // echo $user['password'];
             session_start();
             session_regenerate_id();
-            $_SESSION["id"] = $user["user_id"];
+            $_SESSION["id"] = $user["cus_id"];
             $_SESSION["fname"] = $user["first_name"];
             $_SESSION["email"] = $user["email"];
             // echo $_SESSION["fname"];

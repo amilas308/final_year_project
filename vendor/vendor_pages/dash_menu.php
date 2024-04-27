@@ -7,7 +7,7 @@
         $result = mysqli_fetch_assoc($order_query);
         if($result){
             // echo "Total Order". ' ' . $result['incoming_orders'];
-            $order = "Total Orders" . ' ' . $result['incoming_orders'];
+            $order = $result['incoming_orders'];
             // $row = $result->fetch_assoc();
 
         }
@@ -24,7 +24,8 @@
     </form> -->
 
 <div class="container-card">
-    <?php echo $order;?>
+    <h1>Total Orders</h1>
+    <span><?php echo $order;?></span>
     <!-- <table>
         //$order
         <thead>

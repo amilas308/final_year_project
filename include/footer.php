@@ -39,8 +39,11 @@
         </div>
         <h3>Syntax &copy; copyright 2023</h3>
     </footer>
-    <script type="text/javascript" src="./main.js?v=<?php echo time(); ?>"></script>
-    <script src="./fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/js/all.min.js"></script>
-    <script src="./scroolnav.js"></script>
+    <script src="../porject/main.js?v=<?php echo time() . 'I want to see you';?>"></script>
+    <script src="../porject/aos.js?v=<?php echo time();?>"></script>
+    <script src="../porject/OwlCarousel2-2.3.4/dist/owl.carousel.min.js?v=<?php echo time(); ?>"></script>
+    <script src="../porject/jquery.js?v=<?php echo time(); ?>"></script>
+    <script src="../porject/fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/js/all.min.js"></script>
+    <script src="../porject/scroolnav.js?v=<?php echo time(); ?>"></script>
 </body>
 </html>

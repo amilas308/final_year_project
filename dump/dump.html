@@ -1,0 +1,202 @@
+<?php //var_dump($result['prod_image']); ?>
+<!-- <div class="carous" id="blog-post" data-carousel>
+    <ul id="data-slide" data-slide>
+        <li id="slide" data-image-active>
+            <img id="imageview" src="./vendor/vendor_pages/prod-image/<?php echo $result['prod_image']; ?>" height="300" alt="clock not seen">
+        </li>
+        <li id="slide">
+            <img id="imageview" src="./vendor/vendor_pages/prod-image/IMG-20230617-WA0014.jpg" height="300" alt="clock not seen">
+        </li>
+        <li id="slide">
+            <img id="imageview" src="./vendor/vendor_pages/prod-image/IMG-20230619-WA0018.jpg" height="300" alt="clock not seen">
+        </li>
+    </ul>
+</div> -->
+// echo $order_price . 'This is price with sphaghetti';
+// echo $quantity;
+// echo $total;
+// $order_price = number_format($row['prod_price'],2);
+// echo $order_price;
+// echo $order_quantity . 'This is quantity';
+
+// sleep(5);
+// header("Location: ./index.php");
+    // include('../connect.php');
+        // $name = $user['first_name'];
+            // echo $quantity;
+            // var_dump($row);
+            // exit();
+            <!-- <div class="form-element">
+                <h5><php echo ; ?></h5>
+            </div> -->
+                  <!-- Add more fields as needed -->
+
+      <!-- <div class="button-container">
+        <a href="order.html" class="edit-contact-button">Edit Contact</a>
+        <button type="submit" class="checkout-button">Checkout</button>
+                        <h3>Wrist watch</h3> 
+      </div> -->
+      // changeBg();
+// prev.addEventListener('click', ()=>{
+//     let items = document.querySelector('#slide')
+//     document.querySelector('#data-slide').appendChild(items)
+// });
+// let slideIndex = 1;
+// showSlide(slideIndex);
+// function plusSlide(n){
+//     showSlide(slideIndex += n);
+// }
+// if(plusSlide(1)){
+//     console.log(plusSlide());
+// }
+// function currentSlide(n){
+//     showSlide(slideIndex = n);
+// }
+// function showSlide(n){
+//     let i;
+//     const slide = document.getElementsByClassName('slide');
+//     if(n > slide.length){
+    //         slideIndex = 1;
+    //     }
+    //     if(n< slide.length){
+//         slideIndex = slide.length;
+//     }
+//     for(i = 0; i < slide.length; i++){
+//         slide[i].style.display = "none";
+//     }
+//     slide[slideIndex-1].style.display = "block";
+// }
+// carbut.forEach(button =>{
+//     document.addEventListener("click", () =>{
+//         const offset = button.dataset.carouselButton === 'next' ? 1 : -1
+//         const blogpost = document.querySelectorAll('#blog-post')
+//         const chill = document.querySelectorAll('#data-slide')
+//         console.log(chill)
+//         const slides = button.closest(blogpost).chill
+//         // closest("#blog-post").querySelectorAll('#data-slide')
+//         // if(slides){
+    //         //     console.log(slides);
+    //         // }
+//         // const activeslide = slides.querySelectorAll('#data-slide')
+//         const activeslide = slides.querySelectorAll('#data-slide')
+//         console.log(activeslide)
+//         let newIndex = [...slides.children].indexOf(activeslide) +  offset
+//         if(newIndex < 0 ) newIndex = slides.children.length - 1
+//         if(newIndex >= slides.children.length) newIndex = 0
+//         slides.children[newIndex].dataset.active = true
+//         delete activeslide.dataset.active
+//     })
+// })
+// const contimage = document.getElementById('viewimg'); 
+// const imageslider = document.getElementById('blog-post');
+// const theimage = document.getElementById('imageview');
+// let currentindex = 0;
+// function showimage(index){
+//     // imageslider.style.transform = `translateX(-${index * 100}%)`;
+//     imageslider.classList.remove('slide','slide-next','slide-prev');
+//     console.log(imageslider);
+//     const sliding = (index === currentindex ? 'slide' : 'slide-next');
+//     // const sliding = index == currentindex ? 'slide' : (index > currentindex ? 'slide-next' : 'slide-prev');
+//     // const sliding = index === currentindex ? 'slide' : (index > currentindex ? 'slide-next' : 'slide-prev');
+//     // if(sliding){
+//     //     console.log("classes seen");
+//     // }
+//     imageslider.classList.add(sliding);
+//     currentindex = index;
+// } 
+// function nextImage(){
+    //     currentindex = (currentindex + 1) % theimage.length;
+//     showimage(currentindex);
+// }
+// function prevImage(){
+    //     currentindex = (currentindex - 1 + theimage.length);
+    //     showimage(currentindex);
+// }
+// setInterval(nextImage, 800);
+// // setInterval(prevImage, 800);
+// const edbtn = document.querySelector(".ed");
+// const edopen = document.querySelector(".edit_user");
+// const edclose = document.querySelector(".close-btn");
+// edbtn.onclick = function(){
+    //     edopen.classList.add("active2");
+    //     alert("I have just been clicked");
+    // };
+    // function open(){
+//     if(edbtn == true){
+//         edopen.classList.add("active2");
+//         console.log(edbtn, "You click me brother");
+//     }
+// }
+// function close(){
+//     if(edclose == true){
+//         edclose.classList.remove("active2");
+//         console.log("You click me brother");
+//     }
+// }
+// setInterval(function(){
+    //     let random = Math.floor(Math.random() * 3);
+    //     image.src = images[random];
+    //     console.log(images);
+    // },1500);
+    
+    
+    // const closebox = () =>{
+    //     edopen.classList.remove("active2");
+    //     edopen.style.display="none";
+    // };
+    // edbtn.addEventListener("click", () =>{
+    //     edopen.classList.add("active2");
+    //     edopen.style.display="block";  
+    // });
+    // edclose.addEventListener("click", ()=>{
+    //     closebox();
+    // });
+    // const opened = document.querySelector(".ed");
+// const log = document.querySelector(".edit_user");
+// opened.onclick = function(){
+    //     log.classList.add("active2");
+//     alert("are my clicked");
+// };
+// .addEventListener("click", function(){
+//     console.log("I have been clicked");
+// });
+// document.querySelector(".close-btn").addEventListener("click", function(){
+    //     document.querySelector(".edit_user").classList.remove("active2");
+// });
+// window.addEventListener('click', open);
+// window.addEventListener('click', close);
+// var putRemove = document.querySelector("#btn-active");
+// putRemove.onlclick = function(){
+//     putRemove.classList.add("active");
+// }
+// var containUnder = document.getElementsByClassName("container-under");
+// showEdit = document.querySelector("#ed")
+// closeEdit = document.querySelector("#closeEdit")
+// dialog = document.querySelector("dialog")
+// showEdit.addEventListener("click", () => {
+    //     dialog.showModal()
+    // })
+
+// closeEdit.addEventListener("click", () => {
+//     dialog.close()
+// })
+
+// $(document).ready(function(){
+//     $('.owl-carousel').owlCarousel({
+//         loop: true,
+//         autoplay: true,
+//         autoplayTimeout: 3000,
+//         dots: false,
+//         nav: true,
+//         responsive: responsive
+//         // navText: [$('.owl-navigation .owl-nav-prev),$(.owl-navigation .owl-nav-next')]
+//     });
+//     AOS.init();
+    /* grid-row: 4/4; */
+    margin-top: 5rem;
+
+    /* grid-auto-rows: 40px; */
+    /* grid-template-rows: 40px; */
+}
+// })
+Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cum sit commodi dicta accusamus rem earum quod officiis similique. Laborum sint veniam, architecto praesentium perferendis facilis consequatur impedit dicta nihil nisi!

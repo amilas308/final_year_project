@@ -1,56 +1,9 @@
-const head = document.getElementById('header');
 const abouthead = document.getElementById('about-header');
-const textcol = document.getElementById('navBar');
-const acccol = document.getElementById('drop');
 const icolon  = document.getElementById('icol');
 const nav = document.getElementById('chntxt');
-const prodcut = document.getElementsByClassName('product-btn');
-prodcut.onlcick = () => {
-    prodcut.classList.add("active1");
-}
-// const edbtn = document.querySelector(".ed");
-// const edopen = document.querySelector(".edit_user");
-// const edclose = document.querySelector(".close-btn");
-// edbtn.onclick = function(){
-//     edopen.classList.add("active2");
-//     alert("I have just been clicked");
-// };
-// function open(){
-//     if(edbtn == true){
-//         edopen.classList.add("active2");
-//         console.log(edbtn, "You click me brother");
-//     }
-// }
-// function close(){
-//     if(edclose == true){
-//         edclose.classList.remove("active2");
-//         console.log("You click me brother");
-//     }
-// }
-function appear(){
-    if(icolon){
-        // icolon.addEventListener("click", () => {
-            nav.classList.add('active');
-            console.log('You are seen my brother');
-            // })
-        }
-    }
-    function aboutchng(){
-        var godown = window.scrollY;
-        console.log(abouthead, "I have seen it");
-    if(godown > 0){
-        abouthead.classList.add('pa-fixed-header');
-    } else{
-        abouthead.classList.remove('pa-fixed-header');
-    }
-}
-let image = document.getElementById('image');
-let images = ['new4.png','new3.png','new2.png'];
-// setInterval(function(){
-//     let random = Math.floor(Math.random() * 3);
-//     image.src = images[random];
-//     console.log(images);
-// },1500);
+const head = document.getElementById('header');
+const textcol = document.getElementById('navBar');
+const acccol = document.getElementById('droptangle');
 function changeBg(){
     var scrollValue = window.scrollY;
     console.log(scrollValue);
@@ -69,41 +22,69 @@ function changeBg(){
         // icol.classList.add('text-black');
     }
 }
+function appear(){
+    if(icolon){
+        // icolon.addEventListener("click", () => {
+            nav.classList.add('active');
+            // console.log('You are seen my brother');
+            // })
+        }
+    }
+    function aboutchng(){
+        var godown = window.scrollY;
+        console.log(abouthead, "I have seen it");
+    if(godown > 0){
+        abouthead.classList.add('pa-fixed-header');
+    } else{
+        abouthead.classList.remove('pa-fixed-header');
+    }
+}
+window.addEventListener('scroll', aboutchng);
+window.addEventListener('click', appear);
+window.addEventListener('scroll', changeBg);
+document.addEventListener('DOMContentLoaded', function(){
+const prodcut = document.getElementsByClassName('product-btn');
+let list = document.querySelector('.viewimg .list');
+let items = document.querySelectorAll('.viewimg .list .item');
+let prev = document.getElementById('prev');
+let next = document.getElementById('next');
+let active = 0;
+let lenthItem = items.length - 1;
+next.onclick = function(){
+    // active += 1;
+    if(active + 1 > lenthItem){
+        active = 0;
+    } else{
+        active = active + 1;
+    }
+    reloadSlider();
+}
+prev.onclick = function(){
+    if(active - 1 < 0){
+        active = lenthItem;
+    } else{
+        active = active - 1;
+    }
+    reloadSlider();
+}
+let refreshSlider = setInterval(() => {next.click()}, 6000);
+function reloadSlider(){
+    checkLeft = items[active].offsetLeft;
+    list.style.left = -checkLeft + 'px';
+    clearInterval(refreshSlider);
+    refreshSlider = setInterval(() => {next.click()}, 6000);
+}
+prodcut.onlcick = () => {
+    prodcut.classList.add("active1");
+}
 
-// const closebox = () =>{
-//     edopen.classList.remove("active2");
-//     edopen.style.display="none";
-// };
-// edbtn.addEventListener("click", () =>{
-//     edopen.classList.add("active2");
-//     edopen.style.display="block";  
-// });
-// edclose.addEventListener("click", ()=>{
-//     closebox();
-// });
+let image = document.getElementById('image');
+let images = ['new4.png','new3.png','new2.png'];
+
 const sin = document.getElementsByClassName("sin");
 sin.onlcick = function(){
     alert("Are you sure you want to log out!");
 }
-// const opened = document.querySelector(".ed");
-// const log = document.querySelector(".edit_user");
-// opened.onclick = function(){
-//     log.classList.add("active2");
-//     alert("are my clicked");
-// };
-// .addEventListener("click", function(){
-//     console.log("I have been clicked");
-// });
-// document.querySelector(".close-btn").addEventListener("click", function(){
-//     document.querySelector(".edit_user").classList.remove("active2");
-// });
-// window.addEventListener('click', open);
-// window.addEventListener('click', close);
-// var putRemove = document.querySelector("#btn-active");
-// putRemove.onlclick = function(){
-//     putRemove.classList.add("active");
-// }
-// var containUnder = document.getElementsByClassName("container-under");
 var btnShowRemove = document.getElementsByClassName("btn");
 for(var i = 0; i < btnShowRemove.length; i++){
     btnShowRemove[i].addEventListener("click", function(){
@@ -115,19 +96,6 @@ for(var i = 0; i < btnShowRemove.length; i++){
         // alert("I am working");
     });
 }
-window.addEventListener('click', appear);
-window.addEventListener('scroll', changeBg);
-window.addEventListener('scroll', aboutchng);
-
-showEdit = document.querySelector("#ed")
-closeEdit = document.querySelector("#closeEdit")
-dialog = document.querySelector("dialog")
-
-showEdit.addEventListener("click", () => {
-    dialog.showModal()
-})
-
-closeEdit.addEventListener("click", () => {
-    dialog.close()
-})
-
+// window.addEventListener('scroll');
+// window.addEventListener('click', plusSlide);
+});

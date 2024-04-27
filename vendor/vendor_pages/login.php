@@ -4,6 +4,26 @@
         $username = $_POST['username'];
         $password = $_POST['password'];
         $role = '';
+        $sql = "SELECT * FROM `vendor_users` WHERE `brand_name` = '$username'";
+        $sel_query = mysqli_query($conn,$sql);
+        $result = mysqli_fetch_array($sel_query, MYSQLI_ASSOC);
+        if($result){
+            // var_dump($result);
+            // echo $result["password"];
+            if(password_verify($_POST['password'], $result["password"])){
+                // echo "i did it";
+                session_start();
+                session_regenerate_id();
+                $role = $result['role_id'];
+                $_SESSION['username'] = $result['brand_name'];
+                // echo $_SESSION['username'];
+                $_SESSION['role'] = $result['role_id'];
+                // echo $_SESSION['role'];
+                header("Location: ../dashboard.php");
+            } else{
+                echo '<script>alert("Invalid Login Details!")</script>';
+            }
+        }
         if($username == 'admin' && $password == 'admin'){
             session_start();
             session_regenerate_id();
@@ -20,19 +40,8 @@
             $_SESSION['role'] = $role;
             header("Location: ../dashboard.php");
         }
-        $sql = "SELECT * FROM `vendor_users` WHERE `brand_name` = '$username'";
-        $sel_query = mysqli_query($conn,$sql);
-        $result = mysqli_fetch_assoc($sel_query);
-        if($result){
-            if(password_verify($password, $result['password'])){
-                session_start();
-                session_regenerate_id();
-                $role = $result['role'];
-                $_SESSION['username'] = $result['brand_name'];
-                $_SESSION['role'] = $role;
-                header("Location: ../dashboard.php");
-            }
-        }
+        // $username = $_POST['username'];
+        // $password = $_POST['password'];
 
     }
 

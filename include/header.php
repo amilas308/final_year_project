@@ -2,7 +2,7 @@
     require_once './connect.php';
     session_start();
     if(isset($_SESSION['id'])){
-        $sql = sprintf("SELECT * FROM `customer_users` WHERE user_id = {$_SESSION['id']}");
+        $sql = sprintf("SELECT * FROM `customer_users1` WHERE cus_id = {$_SESSION['id']}");
         $result = $conn->query($sql);
         $user = $result->fetch_assoc();
         $name = $user['first_name'];
@@ -23,9 +23,12 @@
     <title>Syntax</title>
     <link rel="icon" type="png" href="/img/logo.jpg?v=<?php echo time(); ?>">
     <link rel="stylesheet" type="text/css" href="./style.css?v=<?php echo time(); ?>">
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css">
-    <link rel="stylesheet" href="./scrollnav.css">
-    <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css">
+    <link rel="stylesheet" href="../OwlCarousel2-2.3.4/dist/assets/owl.carousel.min.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../OwlCarousel2-2.3.4/dist/assets/owl.theme.default.min.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="../aos-master/dist/aos.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./scrollnav.css?v=<?php echo time(); ?>">
+    <link rel="stylesheet" href="./fontawesome-free-6.1.1-web/fontawesome-free-6.1.1-web/css/all.min.css?v=<?php echo time(); ?>">
 </head>
 <body>  
     <div class="header-nav"> 
@@ -43,7 +46,7 @@
                             <!-- <li><a href="./pages/product.php" class="product-btn">Product</a></li> -->
                             <?php if(isset($user)): ?>
                                 <div class="dropdown">
-                                    <button id="drop" class="dropbtn">Account</button>
+                                    <button id="droptangle" class="dropbtn">Account</button>
                                     <div class="dropdown-pad">
                                         <div class="dropdown-content">
                                             <h2>Account</h2>
@@ -53,9 +56,9 @@
                                             <h4>Phone</h4>
                                             <span><?php echo $user['phone'] ?></span>
                                             <button id="ed">
-                                                <a href="/porject/pages/edit_user.php?editid=<?php echo $user['user_id'] ?>" class="ed">Edit</a>
+                                                <a href="/porject/pages/edit_user.php?editid=<?php echo $user['cus_id'] ?>" class="ed">Edit</a>
                                             </button>
-                                            <a href="/porject/order.php" class="ord">Order</a>
+                                            <a href="/porject/order.php?orderid=<?php echo $user['cus_id']; ?>" class="ord">Order</a>
                                             <a href="/porject/pages/logout.php" class="sin">Log out</a>
                                         </div>
                                     </div>

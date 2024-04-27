@@ -121,6 +121,26 @@
     padding: 2px 4px;
     margin-left: -4px;
 }
+.container-card{
+    margin: 50px auto;
+    padding: 30px 10px 50px 10px;
+    background-color: #088178;
+    border-radius: 20px;
+    box-shadow: 10px 5px 10px rgba(0, 0, 0, 0.12);
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.container-card h1{
+    color: #fff;
+}
+.container-card span{
+    font-size: 32px;
+    position: relative;
+    left: 70%;
+    top: 60%;
+    color: #fff;
+}
 .container-all .container-under main .container-card{
     color: #000;
     margin: 10px 10px;
@@ -484,6 +504,7 @@
     padding: 9px;
     background-color: #34b3ab;
     color: #fff;
+    cursor: pointer;
     outline: none;
     border: none;
 }
@@ -515,7 +536,8 @@
 .produst-page table tbody tr:nth-child(even){
     background-color: #ddd;
 }
-.produst-page table tbody td button.edit_btn{
+.produst-page table tbody td button.edit_btn,
+.add-user .body-vendor table tbody tr td button.edit_btn{
     padding: 4px 8px;
     border-radius: 10px;
     outline: none;
@@ -524,13 +546,16 @@
     color: #fff;
     transition: 400ms ease-out;
 }
+.add-user .body-vendor table tbody tr td button.edit_btn:hover,
 .produst-page table tbody td button.edit_btn:hover{
     opacity: .7;
 }
+.add-user .body-vendor table tbody tr td button.edit_btn a,
 .produst-page table tbody td button.edit_btn a{
     text-decoration: none;
     color: #fff;
 }
+.add-user .body-vendor table tbody tr td button.delete_btn,
 .produst-page table tbody td button.delete_btn{
     padding: 4px 8px;
     border-radius: 10px;
@@ -540,9 +565,11 @@
     color: #fff;
     transition: 400ms ease-out;
 }
+.add-user .body-vendor table tbody tr td button.delete_btn:hover,
 .produst-page table tbody td button.delete_btn:hover{
     opacity: .7;
 }
+.add-user .body-vendor table tbody tr td button.delete_btn a,
 .produst-page table tbody td button.delete_btn a{
     text-decoration: none;
     color: #fff;
@@ -587,6 +614,7 @@
     padding: 9px;
     width: 100%;
     cursor: pointer;
+    border: 1px solid #ddd;
     /* appearance: none; */
     /* display: none; */
 }
@@ -594,8 +622,18 @@
     padding: 5px;
     min-height: 2.4rem;
 }
-.create-product form .form-input:nth-child(5){
-    grid-row-start: 2;
+.create-product form .form-input:nth-child(6){
+    grid-row-start: 3;
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+.create-product form .form-input:nth-child(7){
+    grid-row-start: 4;
+    grid-column-start: 1;
+    grid-column-end: 6;
+}
+.create-product form .form-input:nth-child(8){
+    grid-row-start: 5;
     grid-column-start: 1;
     grid-column-end: 6;
 }
@@ -605,6 +643,11 @@
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
     cursor: pointer;
+}
+.create-product form .form-input input{
+    border: 1px solid #ddd;
+    border-top-left-radius: 10px;
+    border-bottom-left-radius: 10px;
 }
 .create-product form .form-input input[type="file"]::file-selector-button{
     background-color: #34b3ab;
@@ -617,7 +660,7 @@
     /* padding: 9px 4px; */
 }
 .create-product form .form-input:last-child{
-    grid-row-start: 3;
+    grid-row-start: 6;
     grid-column-start: 1;
     grid-column-end: 9;
 }
@@ -636,3 +679,252 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.12);
 }
 /* product create end */
+/* orders  */
+.display-order{
+    margin: 30px 80px 0 80px;
+}
+.display-order h5{
+    font-size: 25px;
+    text-align: center;
+    letter-spacing: .4rem;
+    font-family: Verdana;
+    margin-bottom: 45px;
+}
+.display-order table{
+    border-collapse: collapse;
+    width: 100%;
+    border-radius: 30px;
+    /* border: 1px solid #000; */
+    box-shadow:  15px 15px 15px 15px rgba(1, 0, 0, .1);
+}
+.display-order table th{
+    padding: 10px;
+    text-align: left;
+    background-color: #088178;
+    color: #fff;
+}
+.display-order table tbody tr{
+    border: 1px solid #ddd;
+}
+.display-order table tbody tr:nth-child(even){
+    background-color: #ddd;
+}
+.display-order table td{
+    padding: 15px 9px;
+}
+/* orders end */
+/* edit  */
+.edit_categ{
+   position: absolute;
+   padding: 40px;
+   width: 300px;
+   height: 250px;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   box-shadow: 2px 2px  5px 5px  rgba(0, 0, 0, 0.12); 
+   /* background-color: #000; */
+}
+.edit_categ h2{
+    text-align: center;
+    font-family:  'Arial Narrow';
+    margin-bottom: 20px;
+}
+.edit_categ form{
+    display: flex;
+    flex-direction: column;
+    /* flex-wrap: wrap; */
+    gap: 8px;
+}
+.edit_categ form .form-element{
+    display: flex;
+    flex-direction: column;
+}
+.edit_categ form .form-element label{
+    font-size: 1.3rem;
+    padding: .5rem 0;
+}
+.edit_categ form .form-element input{
+    padding: .4rem .6rem;
+    outline: none;
+    border: none;
+    border-radius: .2rem;
+    background-color: #c9c4c4;
+    color: #000;
+}
+.edit_categ form input[type="submit"]{
+    background-color: #088178;
+    color: #fff;
+    padding: .8rem .4rem;
+    outline: none;
+    border: none;
+    border-radius: .2rem;
+    margin-top: 1rem;
+    cursor: pointer;
+    transition: all 200ms ease-in;
+}
+.edit_categ form input[type="submit"]:hover{
+    background-color: #34b3ab;
+}
+/* edit categiry end */
+/* edit vendor  */
+.edit_ven{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.12);
+    padding: 1.4rem;
+    width: 900px;
+    height: 400px;
+}
+.edit_ven h2{
+    margin-top: 30px;
+    font-size: 1.9rem;
+    text-align: center;
+    font-family: 'Franklin Gothic Medium';
+    letter-spacing: .3rem;
+}
+.edit_ven form{
+    margin: 50px 0 0 0;
+    display: grid;
+    grid-template-rows: repeat(4,80px);
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.edit_ven form input.add{
+    height: 3rem;
+    /* margin-top: 4rem; */
+    border: none;
+    outline: none;
+    background-color: #088178;
+    color: #fff;
+    font-weight: 600;
+    border-radius: 10px;
+    grid-column: 1/4;
+    cursor: pointer;
+    transition: all 200ms ease-in;
+}
+.edit_ven form input.add:hover{
+    background-color: #3a9f98;
+    box-shadow: 2px 2px 5px 5px #ddd;
+}
+.edit_ven form input.add{
+    margin-top: 3rem;
+}
+.edit_ven form .form-element{
+    display: flex;
+    flex-direction: column;
+    gap: 9px;
+}
+.edit_ven form .form-element select{
+    padding: .9rem .4rem;
+    border-radius: 10px;
+    background-color: #c9c4c4;
+    outline: none;
+    border: none;
+    cursor: pointer;
+}
+.edit_ven form .form-element label{
+    font-size: 1.3rem;
+}
+.edit_ven form .form-element input{
+    background-color: #c9c4c4;
+    color: #000;
+    padding: .6rem .9rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+}
+.edit_ven form .form-element.address{
+    grid-column: 1/4;
+}
+.edit_ven form .form-element.address input{
+    height: 16rem;
+}
+/* edit vendor end */
+/* edit product */
+.edit_prod{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 900px;
+    height: 440px;
+    padding: 1.2rem;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.12);
+}
+.edit_prod h2{
+    text-align: center;
+    padding: 1.7rem;
+    font-family: 'Times New Roman';
+}
+.edit_prod form{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(5, 80px);
+    gap: .6rem;
+}
+.edit_prod form input.prod_add{
+    grid-row: 4/4;
+    grid-column: 1/4;
+    margin-top: .9rem;
+    height: 3rem;
+    border-radius: 10px;
+    outline: none;
+    border: none;
+    color: #fff;
+    font-weight: 700;
+    cursor: pointer;
+    background-color: #088178;
+    transition: all 400ms ease-in;
+}
+.edit_prod form input.prod_add:hover{
+    background-color: #34b3ab;
+    box-shadow: 2px 2px 4px 4px rgba(0, 0, 0, 0.12);
+}
+.edit_prod form .form-element{
+    display: flex;
+    flex-direction: column;
+    gap: .7rem;
+}
+.edit_prod form .form-element label{
+    font-size: 1.4rem;
+}
+.edit_prod form .form-element select{
+    padding: .9rem .5rem;
+    background-color: #c9c4c4;
+    outline: none;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #000;
+    font-weight: 500;
+}
+.edit_prod form .form-element input{
+    padding: .9rem .5rem;
+    font-size: .9rem;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    background-color: #c9c4c4;
+    color: #000;
+}
+.edit_prod form .form-element input[type="file"]{
+    padding: 0;
+    cursor:pointer;
+}
+.edit_prod form .form-element input[type="file"]::file-selector-button{
+    background-color: #34b3ab;
+    height: 2.6rem;
+    /* content:counter(name); */
+    outline: none;
+    border: none;
+    cursor: pointer;
+    /* padding: .9rem .6rem; */
+}
+.edit_prod form .form-element.pin{
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+/* edit prodcut end */

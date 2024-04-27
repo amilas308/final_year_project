@@ -34,8 +34,8 @@
                     <td><?php echo $item['address']; ?></td>
                     <td><?php echo $item['Role']; ?></td>
                     <td>
-                        <button class="edit_btn"><a href="#">Edit</a></button>
-                        <button class="delete_btn"><a href="#">Delete</a></button>
+                        <button class="edit_btn"><a href="./vendor_pages/edit_ven.php?editven=<?php echo $item['vendor_id'];?>">Edit</a></button>
+                        <button class="delete_btn"><a href="./vendor_pages/delete.php?delven=<?php echo $item['vendor_id']; ?>">Delete</a></button>
                     </td>
                 </tr>
                 <?php endforeach; ?>

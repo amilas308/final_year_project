@@ -1,6 +1,7 @@
 <?php include "./include/other_header.php";?>
 <?php
-  $sql = "SELECT * FROM `order`";
+  $id = $_GET['orderid'];
+  $sql = "SELECT * FROM `order` WHERE `order_name` = '$id'";
   $query = mysqli_query($conn, $sql);
   $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
   // $row = mysqli_num_rows($result);
@@ -26,7 +27,7 @@
               <td><?php echo $item['order_product'];?></td>
               <td>&#8358;<?php echo $item['order_price'];?></td>
               <td>pending</td>
-              <td><?php echo $item['date'];?></td>
+              <td><?php echo $item['order_date'];?></td>
             </tr>
             <?php }
           ?>

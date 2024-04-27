@@ -23,7 +23,7 @@
                 <td><?php echo $item['category_id']?></td>
                 <td><?php echo $item['category_name']?></td>
                 <td>
-                    <button class="edit_btn"><a href="../dashboard.php?categoryid=<?php echo $item['category_id']?>">Edit</a></button>
+                    <button class="edit_btn"><a href="./vendor_pages/edit_categ.php?editcateg=<?php echo $item['category_id']?>">Edit</a></button>
                     <button class="delete_btn"><a href="./vendor_pages/delete.php?categoryid=<?php echo $item['category_id']?>">Delete</a></button>
                 </td>
             </tr>

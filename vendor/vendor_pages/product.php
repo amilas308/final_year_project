@@ -20,26 +20,26 @@
         <tbody>
             <?php
                 require_once '.././connect.php';
-                $sql = "SELECT * FROM `product` LIMIT 5";
+                $sql = "SELECT * FROM `product` LEFT JOIN `categories` ON product.prod_categ = categories.category_id  LIMIT 5";
                 $query = mysqli_query($conn, $sql);
                 $result = mysqli_fetch_all($query, MYSQLI_ASSOC);
                 $user = $_SESSION['username'];
             ?>
             <?php foreach($result as $item): ?>
              <tr>
-                <td><a href="#"><?php echo 'prod_'.$item['prod_id']; ?></a></td>
+                <td><?php echo $item['prod_unq_id']; ?></td>
                 <td><?php echo $item['prod_name']; ?></td>
                 <td><?php echo $user; ?></td>
-                <td><?php echo $item['prod_categ']; ?></td>
+                <td><?php echo $item['category_name']; ?></td>
                 <td><?php echo $item['prod_description']; ?></td>
                 <td><?php echo $item['date']; ?></td>
                 <td>
-                    <img src="./vendor_pages/prod-image/<?php echo $item['prod_image']; ?>" width="25" alt="Image Description">
+                    <img src="./vendor_pages/prod-image/<?php echo $item['prod_image1']; ?>" width="25" alt="Image Description">
                 </td>
                 <td><?php echo $item['prod_price']; ?></td>
                 <td>
-                    <button class="edit_btn"><a href="#">Edit</a></button>
-                    <button class="delete_btn"><a href="#">Delete</a></button>
+                    <button class="edit_btn"><a href="./vendor_pages/edit_prod.php?prod-edit=<?php echo $item['prod_id']; ?>">Edit</a></button>
+                    <button class="delete_btn"><a href="./vendor_pages/delete.php?prod-del=<?php echo $item['prod_id']; ?>">Delete</a></button>
                 </td>
             </tr>
             <?php endforeach;  ?>

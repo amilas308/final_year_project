@@ -1,7 +1,8 @@
 <?php
     require_once '.././connect.php';
     if(isset($_POST['submit'])){
-        $full_name  = $_POST['full-name'];
+        $ven_unq_id = htmlspecialchars($_POST['ven-unq']);
+        $full_name  = htmlspecialchars($_POST['full-name']);
         $email = htmlspecialchars($_POST['email']);
         $phone = htmlspecialchars($_POST['phone']);
         $brand = htmlspecialchars($_POST['brand-name']);
@@ -17,10 +18,10 @@
              if($num_avail > 0){
                  echo "<script>alert('Vendor Already exist')</script>";
              } else{
-                    $sql = "INSERT INTO `vendor_users`(`full_name`,`email`,`phonenumber`,`brand_name`,`address`,`role_id`,`password`) VALUES('$full_name','$email','$phone','$brand','$address','$role','$password_hash')";
+                    $sql = "INSERT INTO `vendor_users`(`vendor_unq_id`,`full_name`,`email`,`phonenumber`,`brand_name`,`address`,`role_id`,`password`) VALUES('$ven_unq_id','$full_name','$email','$phone','$brand','$address','$role','$password_hash')";
                     if(mysqli_query($conn, $sql)){
                         echo "<script>alert('Vendor registered Successfully')</script>";
-                        header("Location: ../vendor/dashboard.php?create_vendor");
+                        echo "<script>setInterval(() => window.location.href='../vendor/dashboard.php?create_vendor', 800)";
                         exit();
                     } 
                 }
@@ -34,6 +35,7 @@
 <div class="create-vendor">
     <h2>Register Vendor</h2>
     <form action="" method="post">
+        <input type="hidden" name="ven-unq" value="<?php echo 'ven_' . rand(1000, 9999); ?>">
         <div class="form-input">
             <label for="full-name">Full Name</label>
             <input type="text" placeholder="full name" required name="full-name" id="full-name">
@@ -68,7 +70,7 @@
                     ?>
                 <option value="id">select role</option>
                 <?php foreach($result as $item): ?>
-                    <option value="<?php echo $item['role_id']; ?>"><?php echo $item['Role']; ?></option>
+                    <option value="<?php echo $item['role_id']; ?>"><?php echo $item['role']; ?></option>
                 <?php endforeach; ?>
                 <!-- <option value="id2">Vendor</option> -->
             </select>

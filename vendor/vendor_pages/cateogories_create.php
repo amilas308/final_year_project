@@ -13,7 +13,7 @@
                 $query = mysqli_query($conn, $insert_sql);
                 if($query){
                     echo "<script>alert('Category registered Successfully')</script>";
-                    header("Location: ../vendor/dashboard.php?category");
+                    echo "<script>setInterval(() => window.location.href='../vendor/dashboard.php?category', 800)</script>";
                     exit();
                 }
             }

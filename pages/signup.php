@@ -1,11 +1,9 @@
 <?php
 require_once "../connect.php";
     $fname = $lname = $email = $phone = $address = $password = $cpassword = '';
-    // $phone = htmlspecialchars($_POST['phone']);
     $fname_err = $lname_err = $email_err = $phone_err = $address_err = $password_err = $cpassword_err = '';
     if(isset($_POST['submit'])){
-        // var_dump($_POST);
-        // echo 'something happened';
+    $cus_id = htmlspecialchars($_POST['cus-id']);
     if(empty($_POST['fname'])){
         $fname_err = 'Enter your first name';
     } else{
@@ -46,11 +44,12 @@ require_once "../connect.php";
     }
     if(empty($fname_err) && empty($lname_err) && empty($email_err) && empty($phone_err) && empty($password_err) && empty($cpassword_err) && empty($pass_not_match)){
     $password_hash = password_hash($password, PASSWORD_DEFAULT);
-    $sql = "INSERT INTO `customer_users`(`first_name`, `last_name`, `email`, `phone`, `address`, `password`) VALUES (?,?,?,?,?,?)";
+    $sql = "INSERT INTO `customer_users1`(`customer_id`, `first_name`, `last_name`, `email`, `phone`, `address`, `password`) VALUES (?,?,?,?,?,?,?)";
 
     $stmt = $conn->stmt_init();
     $stmt->prepare($sql);
-    $stmt->bind_param('ssssss',
+    $stmt->bind_param('sssssss',
+                      $cus_id,
                       $fname,
                       $lname,
                       $email,
@@ -59,18 +58,13 @@ require_once "../connect.php";
                       $password_hash
     );
     if($stmt->execute()){
-        echo 'I am working';
-        header("Location: login.php");
+        echo '<script>alert("You have signed in successfully")</script>';
+        echo "<script>setInterval(() => window.location.href='login.php', 800)</script>";
     }
-    // if(mysqli_query($conn, $sql)){
-        // echo "Successful sign in";
-        // sleep(2);
-        echo 'I am working';
+        // echo 'I am working';
+ }
+    }
 
-        // var_dump($_POST);
-    // }
-    }
-}
 ?>
 <!DOCTYPE html>
 <html>
@@ -85,7 +79,7 @@ require_once "../connect.php";
         <div class="signin" style="height: 620px;">
             <h1>Sign Up</h1>
             <form action="" method="POST">
-                <!-- <label for="First-name">First Name</label> -->
+                <input name="cus-id" type="hidden"  autocomplete="off"  value="<?php echo  'ven_' . rand(1000, 9999); ?>">
                 <input name="fname" class="<?php echo $fname_err ? 'is_invalid' : null; ?>" type="text"  autocomplete="off"  placeholder="First Name">
                 <span class="invalid-message">
                     <?php echo $fname_err; ?>

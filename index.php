@@ -4,12 +4,12 @@
                 <?php if(isset($_SESSION['user_id'])): ?>
                 <h4>Trade-in-offer for <?php echo $name ?></h4>
                 <?php else: ?>
-                <h4>Welcome to Syntax</h4>
+                <h4>Welcome to <span class="syn">Syntax Limited E-shop</span></h4>
                     <?php endif; ?>
                 <h2>Super Value deals</h2>
                 <h1>On all products</h1>
                 <p>Save moore with coupons & up to 70% off!</p>
-                <button>Shop Know</button>
+                <!-- <button>Shop Know</button> -->
             </div>
             <div class="dissapear">
                 <img src="" id="image" height="360" alt="">
@@ -231,7 +231,7 @@
                 
                     <div class="pro">
                     <a href="./view_product.php?view=<?php echo $item['prod_id']; ?>">
-                        <img src="./vendor/vendor_pages/prod-image/<?php echo $item['prod_image']; ?>" alt="watch">
+                        <img src="./vendor/vendor_pages/prod-image/<?php echo $item['prod_image1']; ?>" alt="watch">
                         <div class="des">
                             <span><?php echo $item['category_name']; ?></span>
                             <h5><?php echo $item['prod_name']; ?></h5>

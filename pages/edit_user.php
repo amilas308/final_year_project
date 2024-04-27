@@ -1,21 +1,23 @@
 <?php
     include('../connect.php');
     $id = $_GET['editid'];
-    $sql = "SELECT * FROM `customer_users` WHERE user_id = $id";
+    $sql = "SELECT * FROM `customer_users1` WHERE cus_id  = $id";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
+    $prev_cus_unq_id = $row['customer_id'];
     $prev_fname = $row['first_name'];
     $prev_lname = $row['last_name'];
     $prev_email = $row['email'];
     $prev_phone = $row['phone'];
     $prev_address = $row['address'];
     if(isset($_POST['submit'])){
+        $prev_cus_unq_id = $_POST['cus-unq-id'];
         $fname = $_POST['fname'];
         $lname = $_POST['lname'];
         $email = $_POST['email'];
         $phone = $_POST['phone'];
         $address = $_POST['address'];
-        $sql = "UPDATE `customer_users` SET `user_id` = $id, `first_name` = '$fname', `last_name` = '$lname', `email` = '$email', `phone` = '$phone', `address` = '$address' WHERE `user_id` = $id";
+        $sql = "UPDATE `customer_users1` SET `cus_id` = $id, `customer_id` ='$prev_cus_unq_id', `first_name` = '$fname', `last_name` = '$lname', `email` = '$email', `phone` = '$phone', `address` = '$address' WHERE `cus_id` = $id";
         $result = mysqli_query($conn, $sql);
         if($result){
             header("Location: ../index.php");
@@ -37,6 +39,7 @@
         <h2>Edit Your Profile</h2>
         <!-- <em class="close-btn">&times;</em> -->
         <form action="" method="post">
+            <input type="hidden" name="cus-unq-id" value="<?php echo $prev_cus_unq_id;?>">
             <div class="form-element">
                 <label for="fname">First Name</label>
                 <input type="text" name="fname" id="ftname" value="<?php echo $prev_fname; ?>">
